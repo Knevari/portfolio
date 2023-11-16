@@ -97,7 +97,7 @@ export default function Stars() {
 
   return (
     <>
-      <canvas id="canvas" className="fixed w-full h-full">
+      <canvas id="canvas" className="absolute w-full h-full">
         You should have javacript on to see this
       </canvas>
     </>
