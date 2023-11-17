@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { rand } from "../utils";
 
-let index = 0,
-  interval = 1000;
+let index = 0;
+const interval = 1000;
 
 export interface StarryTextProps {
   children: React.ReactNode;

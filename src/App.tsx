@@ -1,6 +1,9 @@
+import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from "gsap";
+
+import { FaPython, FaReact, FaRust } from "react-icons/fa";
+import { SiNestjs } from "react-icons/si";
 
 import Footer from "./components/footer";
 import Stars from "./components/stars";
@@ -10,8 +13,7 @@ import { GameOfLife } from "./components/game-of-life";
 import Container from "./components/container";
 import Card from "./components/card";
 import Projects from "./components/projects";
-import { FaPython, FaReact, FaRust } from "react-icons/fa";
-import { SiNestjs } from "react-icons/si";
+import Galaxy from "./components/galaxy";
 
 function App() {
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -30,6 +32,9 @@ function App() {
       end: "bottom center",
       markers: false,
       onEnter: () => {
+        setInsideProjects(true);
+      },
+      onEnterBack: () => {
         setInsideProjects(true);
       },
       onLeaveBack: () => {
@@ -53,10 +58,11 @@ function App() {
             Hey! I'm a web developer. I like music, programming,{" "}
             <StarryText>stars</StarryText> and cats 🐱
           </p>
+          <Galaxy />
           <Footer />
         </Container>
       </section>
-      <section ref={projectsRef} className="min-h-screen relative">
+      <section ref={projectsRef} className="min-h-screen relative mt-10">
         <GameOfLife>
           <Container className="flex items-center">
             <div className="flex items-stretch justify-stretch w-full h-full gap-6 2xl:gap-8">

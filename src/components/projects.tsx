@@ -1,3 +1,6 @@
+import Masonry from "masonry-layout";
+import { useEffect } from "react";
+
 const Project = ({
   children,
   href,
@@ -19,10 +22,22 @@ const Project = ({
 };
 
 export default function Projects() {
+  useEffect(() => {
+    new Masonry("#projects", {
+      itemSelector: ".project",
+      columnWidth: ".grid-sizer",
+      horizontalOrder: true,
+      percentPosition: true,
+    });
+  });
   return (
     <div className="flex flex-col w-full">
       <h2 className="text-white font-bold text-5xl text-left mb-4">Projects</h2>
-      <div className="grid grid-cols-2 grid-rows-2 gap-4 w-full h-full">
+      <div
+        id="projects"
+        className="grid col-auto grid-flow-row gap-4 w-full h-full"
+      >
+        <div className="grid-sizer" style={{ width: "20%" }} />
         <Project href="https://github.com/Knevari/advanced-lane-lines">
           <img
             src="/projects/all.png"
@@ -31,6 +46,36 @@ export default function Projects() {
           />
           <div className="absolute w-full py-2 px-4 bottom-0 bg-gradient-to-br from-gray to-grayer">
             <h5 className="font-semibold text-white">Lane Lines Detector</h5>
+          </div>
+        </Project>
+        <Project href="https://github.com/Knevari/overfall">
+          <img
+            src="/projects/overfall.png"
+            alt=""
+            className="w-full h-full object-contain relative"
+          />
+          <div className="absolute w-full py-2 px-4 bottom-0 bg-gradient-to-br from-gray to-grayer">
+            <h5 className="font-semibold text-white">Overfall</h5>
+          </div>
+        </Project>
+        <Project href="https://github.com/Knevari/overfall">
+          <img
+            src="/projects/overfall.png"
+            alt=""
+            className="w-full h-full object-contain relative"
+          />
+          <div className="absolute w-full py-2 px-4 bottom-0 bg-gradient-to-br from-gray to-grayer">
+            <h5 className="font-semibold text-white">Overfall</h5>
+          </div>
+        </Project>
+        <Project href="https://github.com/Knevari/overfall">
+          <img
+            src="/projects/overfall.png"
+            alt=""
+            className="w-full h-full object-contain relative"
+          />
+          <div className="absolute w-full py-2 px-4 bottom-0 bg-gradient-to-br from-gray to-grayer">
+            <h5 className="font-semibold text-white">Overfall</h5>
           </div>
         </Project>
         <Project href="https://github.com/Knevari/overfall">

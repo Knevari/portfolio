@@ -1,5 +1,3 @@
-import { twMerge } from "tailwind-merge";
-
 export const rand = (min: number, max?: number): number => {
   if (max === undefined) {
     return Math.random() * (min + 1);
