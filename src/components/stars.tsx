@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { rand } from "../utils";
 
-let count = 10;
+let count = 20;
 let stars = [] as { x: number; y: number; size: number }[];
 
 export default function Stars() {

@@ -23,7 +23,7 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-button {
+.metal-gradient {
   --gradient-color-1: var(--colors-gray2);
   --gradient-color-2: var(--colors-gray3);
   background-image: linear-gradient(
@@ -206,5 +206,15 @@ h1 {
   }
   to {
     transform: rotate(180deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card.active {
+    transform: scale(0.8, 0.8);
+  }
+
+  .card.active::before {
+    background-position: 100% 100%;
   }
 }

@@ -32,7 +32,7 @@ const Galaxy = () => {
 
   useEffect(() => {
     generateGalaxy();
-  });
+  }, []);
 
   useFrame(() => {
     if (!particles.current) return;
@@ -113,7 +113,8 @@ const Galaxy = () => {
 export default function App() {
   return (
     <Canvas
-      style={{ position: "absolute", right: "-50%", top: "-10%" }}
+      className="absolute top-0 md:-top-[10%] md:-right-[50%]"
+      style={{ position: "absolute" }}
       camera={{ position: [0, 2, 6] }}
     >
       <Suspense fallback={null}>

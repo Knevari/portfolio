@@ -46,28 +46,33 @@ function App() {
 
   return (
     <ReactLenis root>
-      <section className="min-h-screen overflow-x-hidden">
+      <section className="h-screen overflow-x-hidden">
         <Stars />
-        <Container>
-          <h1 className="text-7xl lg:text-[180px] font-bold leading-relaxed text-white">
-            Knevari
-          </h1>
-          <p className="text-lg sm:text-4xl font-bold leading-tight max-w-4xl pointer-events-none text-white">
-            Hey! I'm a web developer. I like music, programming,{" "}
-            <StarryText>stars</StarryText> and cats 🐱
-          </p>
+        <Container className="flex justify-start text-center md:text-start lg:justify-center flex-col gap-4">
+          <div className="flex flex-col justify-start md:justify-center gap-4 flex-1">
+            <h1 className="mt-10 lg:mt-0 text-7xl lg:text-[180px] font-bold leading-none whitespace-nowrap text-white">
+              Knevari
+            </h1>
+            <p className="text-lg sm:text-4xl font-bold leading-tight max-w-4xl pointer-events-none text-white">
+              Hey! I'm a web developer. I like music, programming,{" "}
+              <StarryText>stars</StarryText> and cats 🐱
+            </p>
+          </div>
           <Galaxy />
-          <Footer />
+          <div className="absolute bottom-[40px] md:bottom-0 shrink-0 pb-8 flex justify-center md:justify-start w-full">
+            <Footer />
+          </div>
         </Container>
       </section>
+
       <section className="min-h-screen relative">
         <GameOfLife>
-          <Container className="flex items-center justify-between">
+          <Container className="flex items-center justify-between px-4">
             <div>
-              <h2 className="text-white font-bold text-5xl text-left mb-4">
+              <h2 className="text-white font-bold text-3xl md:text-5xl text-left mb-4">
                 About me
               </h2>
-              <p className="text-white font-semibold text-2xl w-[45ch]">
+              <p className="text-white font-semibold md:text-2xl w-full md:w-[45ch]">
                 I'm a software developer with a few years of experience on my
                 back. I have a Bsc in Computer Science and I like building
                 things that matter to other people, I strive for becoming a
@@ -80,7 +85,7 @@ function App() {
       </section>
       <section ref={projectsRef} className="min-h-screen relative mt-10">
         <Container className="flex items-center">
-          <div className="flex items-stretch justify-stretch w-full h-full gap-6 2xl:gap-8">
+          <div className="flex flex-col md:flex-row items-center md:items-stretch justify-stretch w-full h-full gap-6 2xl:gap-8">
             <MyStack inViewport={insideProjects} />
             <Projects />
           </div>
