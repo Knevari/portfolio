@@ -97,7 +97,7 @@ function App() {
                   >
                     <FaPython className="inline" />
                   </a>{" "}
-                  for fun
+                  4 fun
                 </Card.Subtitle>
               </Card>
               <Projects />

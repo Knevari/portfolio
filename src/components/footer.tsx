@@ -32,21 +32,25 @@ export default function Socials() {
         className="flex flex-row z-[99999] gap-4 text-white/40 mt-12 fixed bottom-[40px] h-14 items-center px-4 rounded-full border border-[#30333A] transition"
         style={{ background: "hsl(0 0% 8.5%)" }}
       >
-        <FooterItem href="https://github.com/Knevari">
+        <FooterItem href="https://github.com/Knevari" title="Github">
           <FaGithub size="24px" />
         </FooterItem>
-        <FooterItem href="https://www.linkedin.com/in/knevari/">
+        <FooterItem
+          href="https://www.linkedin.com/in/knevari/"
+          title="LinkedIn"
+        >
           <FaLinkedin size="24px" />
         </FooterItem>
-        <FooterItem href="">
+        <FooterItem href="" title="Discord">
           <FaDiscord size="24px" />
         </FooterItem>
-        <FooterItem href="https://codepen.io/_Common/">
+        <FooterItem href="https://codepen.io/_Common/" title="Codepen">
           <FaCodepen size="24px" />
         </FooterItem>
         <div
           tabIndex={-1}
           className="h-3/5 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent rounded-full"
+          role="presentation"
         />
         <FooterItem>
           <LuLanguages />
