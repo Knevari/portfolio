@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import debounce from "lodash.debounce";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { FaRandom } from "react-icons/fa";
 
 const DEAD = 0;
 const ALIVE = 1;
@@ -102,6 +103,7 @@ export function GameOfLife({ children }: { children: React.ReactNode }) {
   const now = useRef<number>();
   const then = useRef<number>();
   const elapsed = useRef<number>();
+  const [reruns, setReruns] = useState(0);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -168,7 +170,7 @@ export function GameOfLife({ children }: { children: React.ReactNode }) {
     draw();
 
     return () => cancelAnimationFrame(animationFrame);
-  }, []);
+  }, [reruns]);
 
   const debouncedResizeEvent = useCallback(
     debounce(() => {
@@ -197,6 +199,14 @@ export function GameOfLife({ children }: { children: React.ReactNode }) {
       <div className="absolute top-0 z-0 h-[30%] w-full bg-gradient-to-b from-[#111111] to-transparent" />
       {children}
       <div className="absolute bottom-0 z-0 h-[30%] w-full bg-gradient-to-b from-transparent to-[#111111]" />
+      <div className="container mx-auto relative">
+        <button
+          className="grid place-items-center absolute w-12 h-12 bottom-0 right-0 rounded-full bg border border-[#30333A] opacity-50 cursor-pointer z-50"
+          onClick={() => setReruns((p) => p + 1)}
+        >
+          <FaRandom className="text-white/50" size="18px" />
+        </button>
+      </div>
     </motion.div>
   );
 }

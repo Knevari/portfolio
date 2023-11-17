@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ReactLenis } from "@studio-freight/react-lenis";
 
 import Footer from "./components/footer";
 import Stars from "./components/stars";
@@ -44,7 +45,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <ReactLenis root>
       <section className="min-h-screen overflow-x-hidden">
         <Stars />
         <Container>
@@ -59,18 +60,34 @@ function App() {
           <Footer />
         </Container>
       </section>
-      <section ref={projectsRef} className="min-h-screen relative mt-10">
+      <section className="min-h-screen relative">
         <GameOfLife>
-          <Container className="flex items-center">
-            <div className="flex items-stretch justify-stretch w-full h-full gap-6 2xl:gap-8">
-              <MyStack inViewport={insideProjects} />
-              <Projects />
+          <Container className="flex items-center justify-between">
+            <div>
+              <h2 className="text-white font-bold text-5xl text-left mb-4">
+                About me
+              </h2>
+              <p className="text-white font-semibold text-2xl w-[45ch]">
+                I'm a software developer with a few years of experience on my
+                back. I have a Bsc in Computer Science and I like building
+                things that matter to other people, I strive for becoming a
+                better professional everyday and I love to learn and teach
+                people about programming.
+              </p>
             </div>
           </Container>
         </GameOfLife>
       </section>
+      <section ref={projectsRef} className="min-h-screen relative mt-10">
+        <Container className="flex items-center">
+          <div className="flex items-stretch justify-stretch w-full h-full gap-6 2xl:gap-8">
+            <MyStack inViewport={insideProjects} />
+            <Projects />
+          </div>
+        </Container>
+      </section>
       <Trailer />
-    </>
+    </ReactLenis>
   );
 }
 

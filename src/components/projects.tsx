@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { cx } from "../utils";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export interface ProjectProps extends React.ComponentPropsWithoutRef<"a"> {
   children: React.ReactNode;
@@ -32,19 +32,18 @@ const Project = ({
 
 const buttonVariants = {
   visible: {
-    width: "56px",
-    height: "56px",
+    scale: 1,
     opacity: 1,
   },
   hidden: {
-    width: 0,
-    height: 0,
+    scale: 0,
     opacity: 0,
   },
 };
 
 export default function Projects() {
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(true);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   const projectsContainerRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
@@ -53,7 +52,7 @@ export default function Projects() {
     if (!container) return;
 
     container.scroll({
-      left: container.scrollLeft - 150,
+      left: container.scrollLeft - 800,
       behavior: "smooth",
     });
   };
@@ -63,14 +62,24 @@ export default function Projects() {
     if (!container) return;
 
     container.scroll({
-      left: container.scrollLeft + 150,
+      left: container.scrollLeft + 800,
       behavior: "smooth",
     });
-
-    if (container.scrollLeft > 0) {
-      setCanScrollLeft(true);
-    }
   };
+
+  useEffect(() => {
+    const onScroll = () => {
+      const container = projectsContainerRef.current;
+      if (!container) return;
+      setCanScrollLeft(container.scrollLeft > 0);
+      setCanScrollRight(
+        container.scrollLeft <
+          container.scrollWidth - container.children[0].clientWidth - 16
+      );
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div className="flex flex-col justify-stretch h-[90vh] max-h-[972px] max-w-[70%] relative">
@@ -120,41 +129,26 @@ export default function Projects() {
             <h5 className="font-semibold text-white">Overfall</h5>
           </div>
         </Project>
-        <Project
-          href="https://github.com/Knevari/overfall"
-          className="min-w-[350px]"
-        >
-          <img src="/projects/overfall.png" alt="" className="object-contain" />
-          <div className="absolute w-full py-2 px-4 bottom-0 bg-gradient-to-br from-gray to-grayer">
-            <h5 className="font-semibold text-white">Overfall</h5>
-          </div>
-        </Project>
       </div>
       <motion.div
         animate={canScrollLeft ? "visible" : "hidden"}
         variants={buttonVariants}
-        className="p-px bg-[#30333A] absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 rounded-full"
+        className="p-px bg-[#30333A] absolute top-1/2 left-0 -translate-y-1/2 -translate-x-full rounded-full origin-center"
         onClick={scrollLeft}
       >
-        <motion.button
-          animate={canScrollLeft ? "visible" : "hidden"}
-          variants={buttonVariants}
-          className="flex items-center justify-center rounded-full w-14 h-14 bg-gradient-to-tr from-gray to-grayer"
-        >
+        <button className="flex items-center justify-center rounded-full w-14 h-14 bg-gradient-to-tr from-gray to-grayer">
           <FaArrowLeft size="22px" color="white" />
-        </motion.button>
+        </button>
       </motion.div>
       <motion.div
-        className="p-px bg-[#30333A] absolute top-1/2 right-0 -translate-y-1/2 translate-x-[20px] rounded-full"
+        animate={canScrollRight ? "visible" : "hidden"}
+        variants={buttonVariants}
+        className="p-px bg-[#30333A] absolute top-1/2 right-0 -translate-y-1/2 translate-x-[20px] rounded-full origin-center"
         onClick={scrollRight}
       >
-        <motion.button
-          animate="visible"
-          variants={buttonVariants}
-          className="flex items-center justify-center rounded-full w-14 h-14 bg-gradient-to-tr from-gray to-grayer"
-        >
+        <button className="flex items-center justify-center rounded-full w-14 h-14 bg-gradient-to-tr from-gray to-grayer">
           <FaArrowRight size="22px" color="white" />
-        </motion.button>
+        </button>
       </motion.div>
     </div>
   );
