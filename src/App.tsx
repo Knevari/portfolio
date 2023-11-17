@@ -1,7 +1,6 @@
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ReactLenis } from "@studio-freight/react-lenis";
 
 import Footer from "./components/footer";
 import Stars from "./components/stars";
@@ -45,7 +44,7 @@ function App() {
   }, []);
 
   return (
-    <ReactLenis root>
+    <>
       <section className="h-screen overflow-x-hidden">
         <Stars />
         <Container className="flex justify-start text-center md:text-start lg:justify-center flex-col gap-4">
@@ -83,8 +82,11 @@ function App() {
           </Container>
         </GameOfLife>
       </section>
-      <section ref={projectsRef} className="min-h-screen relative mt-10">
-        <Container className="flex items-center">
+      <section
+        ref={projectsRef}
+        className="min-h-screen relative my-10 mx-auto w-full"
+      >
+        <Container className="flex flex-col md:flex-row items-center">
           <div className="flex flex-col md:flex-row items-center md:items-stretch justify-stretch w-full h-full gap-6 2xl:gap-8">
             <MyStack inViewport={insideProjects} />
             <Projects />
@@ -92,7 +94,7 @@ function App() {
         </Container>
       </section>
       <Trailer />
-    </ReactLenis>
+    </>
   );
 }
 

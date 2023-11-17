@@ -94,16 +94,16 @@ export default function Projects() {
   }, [onScroll]);
 
   return (
-    <div className="flex flex-col justify-stretch h-[90vh] max-h-[972px] max-w-[70%] relative">
+    <div className="flex flex-col justify-stretch w-[95vw] xl:h-[90vh] xl:max-h-[972px] md:max-w-[70%] relative">
       <h2 className="text-white font-bold text-5xl text-left mb-4">Projects</h2>
       <div
         ref={projectsContainerRef}
         id="projects"
-        className="flex md:grid grid-rows-2 grid-flow-col gap-4 overflow-x-auto scrollbar-hide h-full"
+        className="flex flex-col xl:grid xl:grid-rows-2 xl:grid-flow-col gap-4 md:overflow-x-auto scrollbar-hide h-full"
       >
         <Project
           href="https://github.com/Knevari/advanced-lane-lines"
-          className="min-w-[350px] group"
+          className="md:min-w-[350px] group"
         >
           <img
             src="/projects/all.png"
@@ -116,7 +116,7 @@ export default function Projects() {
         </Project>
         <Project
           href="https://github.com/Knevari/overfall"
-          className="min-w-[350px] group"
+          className="md:min-w-[350px] group"
         >
           <img
             src="/projects/overfall.png"
@@ -129,7 +129,7 @@ export default function Projects() {
         </Project>
         <Project
           href="https://github.com/Knevari/overfall"
-          className="min-w-[350px] group"
+          className="md:min-w-[350px] group"
         >
           <img
             src="/projects/portfolio.png"

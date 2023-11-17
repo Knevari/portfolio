@@ -5,7 +5,7 @@ export const CardTitle = ({ children }: { children: React.ReactNode }) => (
 );
 
 export const CardSubtitle = ({ children }: { children: React.ReactNode }) => (
-  <h4 className="card-subtitle text-2xl">{children}</h4>
+  <p className="card-subtitle text-xl md:text-2xl">{children}</p>
 );
 
 export interface CardProps extends React.ComponentPropsWithRef<"div"> {
