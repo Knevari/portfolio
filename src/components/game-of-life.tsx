@@ -148,7 +148,7 @@ export function GameOfLife({ children }: { children: React.ReactNode }) {
           for (let j = 0; j < colsLength - 1; j++) {
             const cell = grid.current[i][j];
             if (cell === ALIVE) {
-              context.fillStyle = "rgba(255, 255, 255, 0.04)";
+              context.fillStyle = "rgba(255, 255, 255, 0.08)";
             } else {
               context.fillStyle = "transparent";
             }

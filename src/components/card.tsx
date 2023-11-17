@@ -1,24 +1,29 @@
 import { cx } from "../utils";
 
+export const CardTitle = ({ children }: { children: React.ReactNode }) => (
+  <h3 className="card-title text-5xl leading-tight">{children}</h3>
+);
+
+export const CardSubtitle = ({ children }: { children: React.ReactNode }) => (
+  <h4 className="card-subtitle text-2xl">{children}</h4>
+);
+
 export interface CardProps extends React.ComponentPropsWithRef<"div"> {
-  title: string;
-  subtitle: string;
+  isActive?: boolean;
 }
 
-// I know I can make a compound component,
-// it also bothers me a little ;)
 export default function Card({
-  title,
-  subtitle,
+  children,
+  isActive = false,
   className = "",
   ...props
 }: CardProps) {
   return (
-    <div className={cx("card", className)} {...props}>
-      <div className="card-content">
-        <h3 className="card-title">{title}</h3>
-        <h4 className="card-subtitle">{subtitle}</h4>
-      </div>
+    <div className={cx("card", className, { active: isActive })} {...props}>
+      <div className="card-content">{children}</div>
     </div>
   );
 }
+
+Card.Title = CardTitle;
+Card.Subtitle = CardSubtitle;

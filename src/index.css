@@ -28,12 +28,16 @@ h1 {
   padding: 0;
 }
 
+.project {
+  height: 200px;
+}
+
 .card {
   aspect-ratio: 1 / 1.6;
   border: 0.5vmin solid var(--border);
   cursor: pointer;
   position: relative;
-  width: 56vmin;
+  /* width: 56vmin; */
 }
 
 .card::before {
@@ -58,7 +62,7 @@ h1 {
 
 .card.active::before {
   background-position: 100% 100%;
-  transform: scale(1.08, 1.03);
+  transform: scale(1.04, 1);
 }
 
 .card-content {
@@ -66,8 +70,8 @@ h1 {
   background-position: 0% 0%;
   background-size: 5vmin 5vmin;
   padding: 5vmin;
-  width: calc(100%);
-  height: calc(100%);
+  width: 100%;
+  height: 100%;
   position: relative;
   transition: background-position 700ms ease;
   z-index: 2;
@@ -82,16 +86,6 @@ h1 {
   color: white;
   font-weight: 800;
   margin: 0px;
-}
-
-.card-title {
-  font-size: 6vmin;
-  line-height: 1.25;
-}
-
-.card-subtitle {
-  font-size: 3vmin;
-  margin-top: 2vmin;
 }
 
 .link {

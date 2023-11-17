@@ -44,7 +44,10 @@ export default function Socials() {
         <FooterItem href="https://codepen.io/_Common/">
           <FaCodepen size="24px" />
         </FooterItem>
-        <div className="h-3/5 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent rounded-full" />
+        <div
+          tabIndex={-1}
+          className="h-3/5 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent rounded-full"
+        />
         <FooterItem>
           <LuLanguages />
         </FooterItem>

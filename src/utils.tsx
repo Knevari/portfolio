@@ -1,3 +1,5 @@
+import { twMerge } from "tailwind-merge";
+
 export const rand = (min: number, max?: number): number => {
   if (max === undefined) {
     return Math.random() * (min + 1);
@@ -24,4 +26,28 @@ export function cx(...classNames: Array<string | object>) {
   });
 
   return classNamesToBeReturned.join(" ");
+}
+
+export function pseudo(classnames: TemplateStringsArray) {
+  const splitClasses = classnames[0].trim().split(/\s+/);
+  return {
+    before: () => {
+      const classes = splitClasses.map((e) => `before:${e}`).join(" ");
+      return {
+        if: (cond: boolean) => ({
+          [classes]: cond,
+        }),
+        classes,
+      };
+    },
+    after: () => {
+      const classes = splitClasses.map((e) => `after:${e}`).join(" ");
+      return {
+        if: (cond: boolean) => ({
+          [classes]: cond,
+        }),
+        classes,
+      };
+    },
+  };
 }
