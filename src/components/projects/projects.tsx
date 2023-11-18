@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { useRef } from "react";
 import Project from "./project";
 
@@ -6,11 +8,14 @@ import ScrollControls from "../common/scroll-controls";
 import { projects } from "./data.json";
 
 export default function Projects() {
+  const { t } = useTranslation();
   const projectsContainerRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="relative flex w-[95vw] flex-col justify-stretch md:max-w-[70%] xl:h-[90vh] xl:max-h-[972px]">
-      <h2 className="mb-4 text-left text-5xl font-bold text-white">Projects</h2>
+      <h2 className="mb-4 text-left text-5xl font-bold text-white">
+        {t("projects")}
+      </h2>
       <div
         ref={projectsContainerRef}
         id="projects"

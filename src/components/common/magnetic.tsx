@@ -2,13 +2,16 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 export default function Magnetic({
+  off = false,
   children,
 }: {
+  off?: boolean;
   children: React.ReactElement;
 }) {
   const magnetic = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    if (off) return;
     const xTo = gsap.quickTo(magnetic.current, "x", {
       duration: 1,
       ease: "elastic.out(1, 0.3)",
@@ -36,6 +39,10 @@ export default function Magnetic({
 
     magnetic.current?.addEventListener("mousemove", onMouseMove);
     magnetic.current?.addEventListener("mouseleave", onMouseLeave);
+    return () => {
+      magnetic.current?.removeEventListener("mousemove", onMouseMove);
+      magnetic.current?.removeEventListener("mouseleave", onMouseLeave);
+    };
   }, []);
 
   return React.cloneElement(children, { ref: magnetic });

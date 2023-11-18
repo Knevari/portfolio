@@ -1,20 +1,14 @@
 import { useRef } from "react";
 import { motion, useMotionValue } from "framer-motion";
 
-import { LuLanguages } from "react-icons/lu";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaDiscord,
-  FaCodepen,
-  FaMoon,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaDiscord, FaCodepen } from "react-icons/fa";
 
 import DockItem from "./dock-item";
+import DockLanguageSwitch from "./dock-language-switch";
 
 export default function Dock() {
   const dockRef = useRef<HTMLDivElement>(null);
-  let mouseX = useMotionValue(Infinity);
+  const mouseX = useMotionValue(Infinity);
 
   return (
     <motion.div
@@ -66,12 +60,8 @@ export default function Dock() {
         className="h-3/5 w-px rounded-full bg-gradient-to-b from-transparent via-white/30 to-transparent"
         role="presentation"
       />
-      <DockItem mouseX={mouseX}>
-        <LuLanguages />
-      </DockItem>
-      <DockItem mouseX={mouseX}>
-        <FaMoon />
-      </DockItem>
+
+      <DockLanguageSwitch mouseX={mouseX} />
     </motion.div>
   );
 }
