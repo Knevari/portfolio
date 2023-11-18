@@ -1,0 +1,70 @@
+.card {
+  aspect-ratio: 1 / 1.6;
+  border: 0.5vmin solid var(--border);
+  cursor: pointer;
+  position: relative;
+  transition: transform 700ms ease;
+  /* width: 56vmin; */
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: linear-gradient(
+    130deg,
+    transparent 0% 33%,
+    var(--purple) 66%,
+    var(--violet) 83.5%,
+    var(--purple) 100%
+  );
+  background-position: 0% 0%;
+  background-size: 300% 300%;
+  transition: background-position 700ms ease, transform 700ms ease;
+  border: 1px solid var(--violet);
+}
+
+.card.active::before {
+  background-position: 100% 100%;
+  transform: scale(1.04, 1);
+}
+
+.card-content {
+  background: radial-gradient(rgba(255, 255, 255, 0.2) 8%, transparent 8%);
+  background-position: 0% 0%;
+  background-size: 5vmin 5vmin;
+  padding: 5vmin;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: background-position 700ms ease;
+  z-index: 2;
+}
+
+.card.active > .card-content {
+  background-position: -10% 0%;
+}
+
+.card-title,
+.card-subtitle {
+  color: white;
+  font-weight: 800;
+  margin: 0px;
+}
+
+.project {
+  height: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  .card.active {
+    transform: scale(0.8);
+  }
+
+  .card.active::before {
+    background-position: 100% 100%;
+  }
+}

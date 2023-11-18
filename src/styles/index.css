@@ -1,0 +1,35 @@
+@import "gradients.css";
+@import "utils.css";
+@import "keyframes.css";
+@import "card.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --purple: rgb(123, 31, 162);
+  --violet: rgb(103, 58, 183);
+  --pink: rgb(244, 143, 177);
+  --colors-gray2: hsl(0 0% 11%);
+  --colors-gray3: hsl(0 0% 13.6%);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #111111;
+  font-family: "Quicksand", sans-serif;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}

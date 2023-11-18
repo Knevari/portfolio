@@ -63,7 +63,7 @@ export default function Trailer() {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       version="1.1"
       role="presentation"
-      className="hidden xl:block fixed z-20 opacity-50 pointer-events-none"
+      className="hidden xl:block fixed z-0 opacity-50 pointer-events-none"
       style={{ left: mouse.x, top: mouse.y }}
     >
       <g transform="translate(432.6929216106889 319.4196667890774)">

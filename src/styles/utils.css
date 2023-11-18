@@ -1,0 +1,77 @@
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.link {
+  --gradient-color-1: var(--colors-gray2);
+  --gradient-color-2: var(--colors-gray3);
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  background-image: linear-gradient(
+    45deg,
+    var(--gradient-color-1),
+    var(--gradient-color-2),
+    var(--gradient-color-1),
+    var(--gradient-color-2)
+  );
+  background-size: 200% 100%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.starry {
+  display: inline-block;
+  position: relative;
+}
+
+.starry > .star {
+  --size: clamp(10px, 1.5vw, 30px);
+  display: block;
+  position: absolute;
+  left: var(--star-left);
+  top: var(--star-top);
+  width: var(--size);
+  height: var(--size);
+  animation: scale 700ms ease forwards;
+}
+
+.starry > .star > svg {
+  display: block;
+  opacity: 0.7;
+  animation: rotate 1000ms linear infinite;
+}
+
+.starry > .star > svg > path {
+  fill: var(--violet);
+}
+
+.starry-text {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+  );
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.blob-container {
+  animation: rotate 1000ms linear infinite;
+}

@@ -1,8 +1,9 @@
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ReactLenis } from "@studio-freight/react-lenis";
 
-import Footer from "./components/footer";
+import Dock from "./components/dock";
 import Stars from "./components/stars";
 import StarryText from "./components/starry-text";
 import Trailer from "./components/trailer";
@@ -44,11 +45,11 @@ function App() {
   }, []);
 
   return (
-    <>
+    <ReactLenis root>
       <section className="h-screen overflow-x-hidden">
         <Stars />
         <Container className="flex justify-start text-center md:text-start lg:justify-center flex-col gap-4">
-          <div className="flex flex-col justify-start md:justify-center gap-4 flex-1">
+          <div className="flex flex-col justify-start md:justify-center gap-4  flex-1">
             <h1 className="mt-10 lg:mt-0 text-7xl lg:text-[180px] font-bold leading-none whitespace-nowrap text-white">
               Knevari
             </h1>
@@ -59,7 +60,7 @@ function App() {
           </div>
           <Galaxy />
           <div className="absolute bottom-[40px] md:bottom-0 shrink-0 pb-8 flex justify-center md:justify-start w-full">
-            <Footer />
+            <Dock />
           </div>
         </Container>
       </section>
@@ -84,7 +85,7 @@ function App() {
       </section>
       <section
         ref={projectsRef}
-        className="min-h-screen relative my-10 mx-auto w-full"
+        className="min-h-screen relative my-10 md:mt-10 md:mb-0 mx-auto w-full"
       >
         <Container className="flex flex-col md:flex-row items-center">
           <div className="flex flex-col md:flex-row items-center md:items-stretch justify-stretch w-full h-full gap-6 2xl:gap-8">
@@ -94,7 +95,7 @@ function App() {
         </Container>
       </section>
       <Trailer />
-    </>
+    </ReactLenis>
   );
 }
 
