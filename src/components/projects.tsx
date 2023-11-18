@@ -147,7 +147,11 @@ export default function Projects() {
         className="hidden md:block p-px bg-[#30333A] absolute top-1/2 left-0 -translate-y-1/2 -translate-x-full rounded-full origin-center"
         onClick={scrollLeft}
       >
-        <button className="flex items-center justify-center rounded-full w-14 h-14 bg-gradient-to-tr from-gray to-grayer">
+        <button
+          aria-label="Scroll Left"
+          aria-description="Scrolls the projects container to the left"
+          className="flex items-center justify-center rounded-full w-14 h-14 bg-gradient-to-tr from-gray to-grayer"
+        >
           <FaArrowLeft size="22px" color="white" />
         </button>
       </motion.div>
@@ -157,7 +161,11 @@ export default function Projects() {
         className="hidden md:block p-px bg-[#30333A] absolute top-1/2 right-0 -translate-y-1/2 translate-x-[20px] rounded-full origin-center"
         onClick={scrollRight}
       >
-        <button className="flex items-center justify-center rounded-full w-14 h-14 bg-gradient-to-tr from-gray to-grayer">
+        <button
+          aria-label="Scroll Right"
+          aria-description="Scrolls the projects container to the right"
+          className="flex items-center justify-center rounded-full w-14 h-14 bg-gradient-to-tr from-gray to-grayer"
+        >
           <FaArrowRight size="22px" color="white" />
         </button>
       </motion.div>

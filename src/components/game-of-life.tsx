@@ -201,6 +201,8 @@ export function GameOfLife({ children }: { children: React.ReactNode }) {
       <div className="absolute bottom-0 z-0 h-[30%] w-full bg-gradient-to-b from-transparent to-[#111111]" />
       <div className="container mx-auto relative">
         <button
+          title="Reset Game of Life"
+          aria-label="Reset Game of Life"
           className="grid place-items-center absolute w-12 h-12 bottom-0 right-0 rounded-full bg border border-[#30333A] opacity-50 cursor-pointer z-50"
           onClick={() => setReruns((p) => p + 1)}
         >
