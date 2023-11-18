@@ -11,10 +11,11 @@ export default function Hero() {
   const {
     state: { language },
   } = useLanguage();
+  console.log(`Current Language is ${language}`);
+
   return (
     <section className="h-screen overflow-x-hidden">
       <Stars />
-      <h1 className="hidden">{language}</h1>
       <Container className="flex flex-col justify-start gap-4 text-center md:text-start lg:justify-center">
         <div className="flex flex-1 flex-col justify-start gap-4  md:justify-center">
           <h1 className="mt-10 whitespace-nowrap text-7xl font-bold leading-none text-white lg:mt-0 lg:text-[180px]">

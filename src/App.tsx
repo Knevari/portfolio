@@ -1,6 +1,7 @@
 import { ReactLenis } from "@studio-freight/react-lenis";
 
 import Trailer from "./components/common/trailer";
+
 import Hero from "./sections/hero";
 import AboutMe from "./sections/about-me";
 import Projects from "./sections/projects";
