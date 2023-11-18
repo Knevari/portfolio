@@ -24,7 +24,7 @@ export default function Trailer() {
       "#blob-1",
       { path: "#blob-1" },
       { path: "#blob-2" },
-      { repeat: 999, duration: 1000, yoyo: true }
+      { repeat: 999, duration: 1000, yoyo: true },
     );
 
     tween.start();
@@ -63,7 +63,7 @@ export default function Trailer() {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       version="1.1"
       role="presentation"
-      className="hidden xl:block fixed z-0 opacity-50 pointer-events-none"
+      className="pointer-events-none fixed z-0 hidden opacity-50 xl:block"
       style={{ left: mouse.x, top: mouse.y }}
     >
       <g transform="translate(432.6929216106889 319.4196667890774)">

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { rand } from "../utils";
+import { rand } from "../../utils";
 
 let count = 20;
 let stars = [] as { x: number; y: number; size: number }[];
@@ -44,7 +44,7 @@ export default function Stars() {
       stars.push({
         x: rand(
           window.innerWidth / 2,
-          window.innerWidth + window.innerWidth / 2
+          window.innerWidth + window.innerWidth / 2,
         ),
         y: -rand(window.innerHeight),
         size: rand(1),
@@ -75,7 +75,7 @@ export default function Stars() {
       if (star.x < 0 || star.y > window.innerHeight) {
         star.x = rand(
           window.innerWidth / 2,
-          window.innerWidth + window.innerWidth / 2
+          window.innerWidth + window.innerWidth / 2,
         );
         star.y = -rand(window.innerHeight);
         star.size = rand(4);
@@ -97,7 +97,7 @@ export default function Stars() {
 
   return (
     <>
-      <canvas id="canvas" className="absolute w-full h-full">
+      <canvas id="canvas" className="absolute h-full w-full">
         You should have javacript on to see this
       </canvas>
     </>

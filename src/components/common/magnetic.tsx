@@ -9,7 +9,6 @@ export default function Magnetic({
   const magnetic = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    console.log(children);
     const xTo = gsap.quickTo(magnetic.current, "x", {
       duration: 1,
       ease: "elastic.out(1, 0.3)",

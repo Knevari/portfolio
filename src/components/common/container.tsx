@@ -1,4 +1,4 @@
-import { cx } from "../utils";
+import { cx } from "../../utils";
 
 export interface ContainerProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
@@ -12,8 +12,8 @@ export default function Container({
   return (
     <div
       className={cx(
-        "container mx-auto z-10 translate-x-0 relative min-h-screen",
-        className
+        "container relative z-10 mx-auto min-h-screen translate-x-0",
+        className,
       )}
       {...props}
     >

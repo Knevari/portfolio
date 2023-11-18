@@ -1,0 +1,19 @@
+{
+  "projects": [
+    {
+      "name": "This Portfolio",
+      "source": "https://github.com/Knevari/portfolio",
+      "thumbnail": "/projects/portfolio.png"
+    },
+    {
+      "name": "Overfall",
+      "source": "https://github.com/Knevari/overfall",
+      "thumbnail": "/projects/overfall.png"
+    },
+    {
+      "name": "Advanced Lane Lines",
+      "source": "https://github.com/Knevari/advanced-lane-lines",
+      "thumbnail": "/projects/all.png"
+    }
+  ]
+}

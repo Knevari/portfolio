@@ -1,7 +1,7 @@
 import { SiNestjs } from "react-icons/si";
 import { FaPython, FaReact, FaRust } from "react-icons/fa";
 
-import Card from "./card";
+import Card from "./card/card";
 
 export default function MyStack({ inViewport }: { inViewport: boolean }) {
   return (

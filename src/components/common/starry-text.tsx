@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { rand } from "../utils";
+import { rand } from "../../utils";
 
 let index = 0;
 const interval = 1000;
@@ -24,10 +24,13 @@ export default function StarryText({ children }: StarryTextProps) {
     };
 
     for (const star of stars) {
-      setTimeout(() => {
-        animate(star);
-        setInterval(() => animate(star), interval);
-      }, (index++ * interval) / 3);
+      setTimeout(
+        () => {
+          animate(star);
+          setInterval(() => animate(star), interval);
+        },
+        (index++ * interval) / 3,
+      );
     }
   }, []);
 

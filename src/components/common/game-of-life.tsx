@@ -23,7 +23,7 @@ const containerVariants = {
 const buildGoLGrid = (
   rows: number,
   cols: number,
-  sparsity: number = 0.5
+  sparsity: number = 0.5,
 ): number[][] => {
   const grid = [];
 
@@ -97,7 +97,11 @@ const getNextGridState = (grid: number[][]) => {
   return gridCopy;
 };
 
-export function GameOfLife({ children }: { children: React.ReactNode }) {
+export default function GameOfLife({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const grid = useRef<number[][]>([]);
   const startTime = useRef<number>();
   const now = useRef<number>();
@@ -158,7 +162,7 @@ export function GameOfLife({ children }: { children: React.ReactNode }) {
               j * CELL_SIZE_PIXELS,
               i * CELL_SIZE_PIXELS,
               CELL_SIZE_PIXELS,
-              CELL_SIZE_PIXELS
+              CELL_SIZE_PIXELS,
             );
           }
         }
@@ -177,7 +181,7 @@ export function GameOfLife({ children }: { children: React.ReactNode }) {
       const canvas = canvasRef.current as HTMLCanvasElement;
       setupCanvas(canvas);
     }, 200),
-    []
+    [],
   );
 
   useEffect(() => {
@@ -199,11 +203,11 @@ export function GameOfLife({ children }: { children: React.ReactNode }) {
       <div className="absolute top-0 z-0 h-[30%] w-full bg-gradient-to-b from-[#111111] to-transparent" />
       {children}
       <div className="absolute bottom-0 z-0 h-[30%] w-full bg-gradient-to-b from-transparent to-[#111111]" />
-      <div className="container mx-auto relative">
+      <div className="container relative mx-auto">
         <button
           title="Reset Game of Life"
           aria-label="Reset Game of Life"
-          className="grid place-items-center absolute w-12 h-12 bottom-0 right-0 rounded-full bg border border-[#30333A] opacity-50 cursor-pointer z-50"
+          className="bg absolute bottom-0 right-0 z-50 grid h-12 w-12 cursor-pointer place-items-center rounded-full border border-[#30333A] opacity-50"
           onClick={() => setReruns((p) => p + 1)}
         >
           <FaRandom className="text-white/50" size="18px" />

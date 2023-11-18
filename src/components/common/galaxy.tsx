@@ -88,11 +88,11 @@ const Galaxy = () => {
 
     particles.current.geometry.setAttribute(
       "position",
-      new THREE.BufferAttribute(positions, 3)
+      new THREE.BufferAttribute(positions, 3),
     );
     particles.current.geometry.setAttribute(
       "color",
-      new THREE.BufferAttribute(colors, 3)
+      new THREE.BufferAttribute(colors, 3),
     );
   };
 
@@ -113,7 +113,7 @@ const Galaxy = () => {
 export default function App() {
   return (
     <Canvas
-      className="absolute top-0 md:-top-[10%] md:-right-[50%]"
+      className="absolute top-0 md:-right-[50%] md:-top-[10%]"
       style={{ position: "absolute" }}
       camera={{ position: [0, 2, 6] }}
     >
