@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { rand } from "../../utils";
 
 let count = 10;
 let stars = [] as { x: number; y: number; size: number }[];
 
-export default function Stars() {
+export default function Starfall() {
+  const starImageRef = useRef<HTMLImageElement | null>(null);
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const ctxRef = React.useRef<CanvasRenderingContext2D | null>(null);
 
@@ -12,6 +13,13 @@ export default function Stars() {
     if (typeof window === "undefined") {
       return;
     }
+    const starImageElement = document.querySelector(
+      "#star-white",
+    ) as HTMLImageElement;
+
+    starImageElement.onload = () => {
+      starImageRef.current = starImageElement;
+    };
 
     const canvas = document.getElementById("canvas") as HTMLCanvasElement;
     canvasRef.current = canvas;
@@ -35,10 +43,11 @@ export default function Stars() {
     };
 
     window.requestAnimationFrame(render);
-
     window.addEventListener("resize", onResize);
+
     onResize();
 
+    // Create some stars
     stars = [];
     for (let i = 0; i < count; i++) {
       stars.push({
@@ -54,7 +63,7 @@ export default function Stars() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  function render() {
+  const render = useCallback(() => {
     const canvas = canvasRef.current;
     const ctx = ctxRef.current;
 
@@ -82,12 +91,25 @@ export default function Stars() {
       }
 
       const visibility = 1 - (1 - star.size / 4 + star.y / canvas.height);
-
       ctx.fillStyle = `rgba(255, 255, 255, ${visibility})`;
+
       ctx.beginPath();
       ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
       ctx.fill();
 
+      const starImage = starImageRef.current;
+
+      if (starImage) {
+        ctx.drawImage(
+          starImage,
+          star.x - star.size * 1.5,
+          star.y - star.size * 1.5,
+          star.size * 3,
+          star.size * 3,
+        );
+      }
+
+      // Cover up trail
       star.x -= star.size;
       star.y += star.size;
 
@@ -103,11 +125,11 @@ export default function Stars() {
     }
 
     window.requestAnimationFrame(render);
-  }
+  }, []);
 
   return (
     <>
-      <img src="/star-white.svg" alt="" id="star-white" />
+      <img src="/star-fill.svg" alt="" id="star-white" className="hidden" />
       <canvas id="canvas" className="absolute h-full w-full">
         You should have javacript on to see this
       </canvas>

@@ -1,7 +1,7 @@
 import { Trans } from "react-i18next";
 
 import Dock from "../components/dock/dock";
-import Stars from "../components/common/stars";
+import Starfall from "../components/common/starfall";
 import StarryText from "../components/common/starry-text";
 import Container from "../components/common/container";
 import Galaxy from "../components/common/galaxy";
@@ -15,7 +15,7 @@ export default function Hero() {
 
   return (
     <section className="h-screen overflow-x-hidden">
-      <Stars />
+      <Starfall />
       <Container className="flex flex-col justify-start gap-4 text-center md:text-start lg:justify-center">
         <div className="flex flex-1 flex-col justify-start gap-4  md:justify-center">
           <h1 className="mt-10 whitespace-nowrap text-7xl font-bold leading-none text-white lg:mt-0 lg:text-[180px]">
