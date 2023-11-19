@@ -200,9 +200,9 @@ export default function GameOfLife({
         ref={canvasRef}
         className="absolute inset-0 z-0 h-full w-full"
       ></canvas>
-      <div className="absolute top-0 z-0 h-[30%] w-full bg-gradient-to-b from-[#111111] to-transparent" />
+      <div className="absolute top-0 z-0 h-[30%] w-full bg-gradient-to-b from-[#0D0D0D] to-transparent" />
       {children}
-      <div className="absolute bottom-0 z-0 h-[30%] w-full bg-gradient-to-b from-transparent to-[#111111]" />
+      <div className="absolute bottom-0 z-0 h-[30%] w-full bg-gradient-to-b from-transparent to-[#0D0D0D]" />
       <div className="container relative mx-auto">
         <button
           title="Reset Game of Life"
