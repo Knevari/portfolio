@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { rand } from "../../utils";
 
-let count = 20;
+let count = 10;
 let stars = [] as { x: number; y: number; size: number }[];
 
 export default function Stars() {
@@ -66,7 +66,7 @@ export default function Stars() {
       return;
     }
 
-    ctx.fillStyle = "rgba(17, 17, 17, 0.7)";
+    ctx.fillStyle = "rgba(17, 17, 17, 0.2)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < count; i++) {
@@ -90,6 +90,16 @@ export default function Stars() {
 
       star.x -= star.size;
       star.y += star.size;
+
+      ctx.fillStyle = "rgba(13, 13, 13, 1)";
+      const scaleFactor = 30;
+
+      ctx.fillRect(
+        star.x + star.size * scaleFactor - (star.size * scaleFactor) / 4,
+        star.y - star.size * scaleFactor - (star.size * scaleFactor) / 4,
+        (star.size * scaleFactor) / 2,
+        (star.size * scaleFactor) / 2,
+      );
     }
 
     window.requestAnimationFrame(render);
@@ -97,6 +107,7 @@ export default function Stars() {
 
   return (
     <>
+      <img src="/star-white.svg" alt="" id="star-white" />
       <canvas id="canvas" className="absolute h-full w-full">
         You should have javacript on to see this
       </canvas>
