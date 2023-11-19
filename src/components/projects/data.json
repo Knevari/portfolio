@@ -3,17 +3,22 @@
     {
       "name": "This Portfolio",
       "source": "https://github.com/Knevari/portfolio",
-      "thumbnail": "/projects/portfolio.png"
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/f_auto,q_auto:good/v1700400586/portfolio/projects/thumbnails/portfolio_ufgxlh.png"
     },
     {
       "name": "Overfall",
       "source": "https://github.com/Knevari/overfall",
-      "thumbnail": "/projects/overfall.png"
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/f_auto,q_auto:good/v1700400586/portfolio/projects/thumbnails/overfall_buxltr.png"
     },
     {
       "name": "Advanced Lane Lines",
       "source": "https://github.com/Knevari/advanced-lane-lines",
-      "thumbnail": "/projects/all.png"
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/f_auto,q_auto:good/v1700400586/portfolio/projects/thumbnails/all_tt33gd.png"
+    },
+    {
+      "name": "Histogram Filter Visualizer",
+      "source": "https://github.com/Knevari/histogram-filter-visualizer",
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/f_auto,q_auto:good/v1700400586/portfolio/projects/thumbnails/hfv_gukq0k.png"
     }
   ]
 }
