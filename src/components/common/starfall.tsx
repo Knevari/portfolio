@@ -75,13 +75,21 @@ export default function Starfall() {
       return;
     }
 
-    ctx.fillStyle = "rgba(17, 17, 17, 0.2)";
+    const trailCoverSize = 20;
+    const trailCoverColor = "rgba(13, 13, 13, 1)";
+    const clearColor = "rgba(17, 17, 17, 0.2)";
+    const imageStarSizeRatio = 1.5;
+
+    ctx.fillStyle = clearColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < count; i++) {
       const star = stars[i];
 
-      if (star.x < 0 || star.y > window.innerHeight) {
+      if (
+        star.x < -star.size * trailCoverSize * 3 ||
+        star.y > window.innerHeight + star.size * trailCoverSize * 3
+      ) {
         star.x = rand(
           window.innerWidth / 2,
           window.innerWidth + window.innerWidth / 2,
@@ -102,10 +110,10 @@ export default function Starfall() {
       if (starImage) {
         ctx.drawImage(
           starImage,
-          star.x - star.size * 1.5,
-          star.y - star.size * 1.5,
-          star.size * 3,
-          star.size * 3,
+          star.x - star.size * imageStarSizeRatio,
+          star.y - star.size * imageStarSizeRatio,
+          star.size * imageStarSizeRatio * 2,
+          star.size * imageStarSizeRatio * 2,
         );
       }
 
@@ -113,14 +121,13 @@ export default function Starfall() {
       star.x -= star.size;
       star.y += star.size;
 
-      ctx.fillStyle = "rgba(13, 13, 13, 1)";
-      const scaleFactor = 30;
+      ctx.fillStyle = trailCoverColor;
 
       ctx.fillRect(
-        star.x + star.size * scaleFactor - (star.size * scaleFactor) / 4,
-        star.y - star.size * scaleFactor - (star.size * scaleFactor) / 4,
-        (star.size * scaleFactor) / 2,
-        (star.size * scaleFactor) / 2,
+        star.x + star.size * trailCoverSize - (star.size * trailCoverSize) / 4,
+        star.y - star.size * trailCoverSize - (star.size * trailCoverSize) / 4,
+        (star.size * trailCoverSize) / 2,
+        (star.size * trailCoverSize) / 2,
       );
     }
 
