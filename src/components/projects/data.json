@@ -3,22 +3,26 @@
     {
       "name": "Overfall",
       "source": "https://github.com/Knevari/overfall",
-      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/f_auto,q_auto:good/v1700400586/portfolio/projects/thumbnails/overfall_buxltr.png"
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/f_auto,q_auto:good/v1700400586/portfolio/projects/thumbnails/overfall_buxltr.png",
+      "video": "https://res.cloudinary.com/dvfpvjwre/video/upload/v1700400520/portfolio/projects/videos/overfall_vnn4hl.mov"
     },
     {
       "name": "This Portfolio",
       "source": "https://github.com/Knevari/portfolio",
-      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/f_auto,q_auto:good/v1700400586/portfolio/projects/thumbnails/portfolio_ufgxlh.png"
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/q_auto:good/v1700435092/portfolio/projects/thumbnails/portfolio_taofln.webp",
+      "video": "https://res.cloudinary.com/dvfpvjwre/video/upload/v1700434800/portfolio/projects/videos/portfolio_ubs7ax.mov"
     },
     {
       "name": "Advanced Lane Lines",
       "source": "https://github.com/Knevari/advanced-lane-lines",
-      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/f_auto,q_auto:good/v1700400586/portfolio/projects/thumbnails/all_tt33gd.png"
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/f_auto,q_auto:good/v1700400586/portfolio/projects/thumbnails/all_tt33gd.png",
+      "video": "https://res.cloudinary.com/dvfpvjwre/video/upload/v1700400543/portfolio/projects/videos/all_hzdivm.mov"
     },
     {
       "name": "Histogram Filter Visualizer",
       "source": "https://github.com/Knevari/histogram-filter-visualizer",
-      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/f_auto,q_auto:good/v1700400586/portfolio/projects/thumbnails/hfv_gukq0k.png"
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/f_auto,q_auto:good/v1700400586/portfolio/projects/thumbnails/hfv_gukq0k.png",
+      "video": "https://res.cloudinary.com/dvfpvjwre/video/upload/v1700400519/portfolio/projects/videos/hfv_rnpwek.mov"
     }
   ]
 }

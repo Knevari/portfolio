@@ -31,7 +31,7 @@ export default function StackTooltip({
     right: "top-1/2 -translate-y-1/2 left-[calc(100%+10px)]",
   };
   return (
-    <motion.div
+    <motion.span
       animate={isActive ? "visible" : "hidden"}
       variants={variants}
       tabIndex={-1}
@@ -45,29 +45,29 @@ export default function StackTooltip({
     >
       {children}
       {position === "top" && (
-        <div
+        <span
           role="presentation"
           className="absolute inset-1/2 top-full h-0 w-0 -translate-x-1/2 border-[7px] border-transparent border-t-[#0D0D0D]"
         />
       )}
       {position === "right" && (
-        <div
+        <span
           role="presentation"
           className="absolute inset-1/2 -left-[4px] top-[50%] h-0 w-0 -translate-x-1/2 -translate-y-1/2 border-[8px] border-transparent border-r-[#0D0D0D]"
         />
       )}
       {position === "bottom" && (
-        <div
+        <span
           role="presentation"
           className="absolute inset-1/2 -top-[13px] h-0 w-0 -translate-x-1/2 border-[7px] border-transparent border-b-[#0D0D0D]"
         />
       )}
       {position === "left" && (
-        <div
+        <span
           role="presentation"
           className="absolute inset-1/2 -right-[4px] top-[50%] h-0 w-0 -translate-x-1/2 -translate-y-1/2 border-[8px] border-transparent border-r-[#0D0D0D]"
         />
       )}
-    </motion.div>
+    </motion.span>
   );
 }

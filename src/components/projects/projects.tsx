@@ -25,12 +25,23 @@ export default function Projects() {
           <Project
             key={project.name}
             href={project.source}
-            className="group md:min-w-[350px]"
+            className="group relative md:min-w-[350px]"
           >
+            <video
+              width="100%"
+              height="100%"
+              className="absolute h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+            >
+              <source src={project.video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             <img
               src={project.thumbnail}
               alt={project.name}
-              className="relative h-full w-full object-contain grayscale transition duration-500 group-hover:grayscale-0"
+              className="absolute left-0 top-0 h-full w-full object-cover grayscale transition delay-100 duration-500 group-hover:opacity-0 group-hover:grayscale-0"
             />
             <div className="absolute bottom-0 w-full bg-gradient-to-br from-gray to-grayer px-4 py-2">
               <p className="font-semibold text-white">{project.name}</p>
