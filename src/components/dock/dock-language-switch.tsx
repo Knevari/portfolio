@@ -28,6 +28,8 @@ export default function DockLanguageSwitch({
             {Object.entries(lngs).map(([key, { nativeName, flag }], index) => (
               <img
                 key={key}
+                width={64}
+                height={48}
                 title={nativeName}
                 src={flag}
                 alt={`${nativeName} flag`}

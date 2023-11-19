@@ -2,6 +2,7 @@
 import { useRef, useEffect, Suspense } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
+import debounce from "lodash.debounce";
 
 const parameters = {
   size: 0.012,
@@ -32,6 +33,9 @@ const Galaxy = () => {
 
   useEffect(() => {
     generateGalaxy();
+    const debouncedGenerateGalaxy = debounce(generateGalaxy, 200);
+    window.addEventListener("resize", debouncedGenerateGalaxy);
+    return () => window.removeEventListener("resize", debouncedGenerateGalaxy);
   }, []);
 
   useFrame(() => {

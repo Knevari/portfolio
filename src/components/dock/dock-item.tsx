@@ -44,6 +44,7 @@ export default function DockItem({
           {
             className: cx("link h-full w-full", className),
             target: "_blank",
+            ...props,
           },
           React.cloneElement(children, {
             className: "group-hover:fill-[url(#purple-gradient)] transition",
