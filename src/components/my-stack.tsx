@@ -33,14 +33,14 @@ export default function MyStack({ inViewport }: { inViewport: boolean }) {
               <a
                 href="https://www.rust-lang.org/"
                 target="_blank"
-                title="NestJS"
+                title="Rust"
               />
             ),
             link4: (
               <a
                 href="https://www.python.org/"
                 target="_blank"
-                title="NestJS"
+                title="Python"
               />
             ),
           }}
