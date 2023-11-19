@@ -180,7 +180,7 @@ export default function GameOfLife({
     debounce(() => {
       const canvas = canvasRef.current as HTMLCanvasElement;
       setupCanvas(canvas);
-    }, 200),
+    }, 300),
     [],
   );
 
@@ -188,6 +188,8 @@ export default function GameOfLife({
     window.addEventListener("resize", debouncedResizeEvent);
     return () => window.removeEventListener("resize", debouncedResizeEvent);
   }, [debouncedResizeEvent]);
+
+  const incrementReruns = useCallback(() => setReruns((p) => p + 1), []);
 
   return (
     <motion.div
@@ -208,7 +210,7 @@ export default function GameOfLife({
           title="Reset Game of Life"
           aria-label="Reset Game of Life"
           className="bg absolute bottom-0 right-0 z-50 grid h-12 w-12 cursor-pointer place-items-center rounded-full border border-[#30333A] opacity-50"
-          onClick={() => setReruns((p) => p + 1)}
+          onClick={incrementReruns}
         >
           <FaRandom className="text-white/50" size="18px" />
         </button>
