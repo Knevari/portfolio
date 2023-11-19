@@ -15,6 +15,7 @@ export default function DockItem({
   mouseX,
   children,
   className = "",
+  title,
   unmagnetized = false,
   ...props
 }: DockItemProps) {
@@ -34,6 +35,7 @@ export default function DockItem({
 
   return (
     <motion.div
+      aria-label={title}
       ref={ref}
       style={{ width }}
       className="dock-item group relative aspect-square rounded-full from-[#7B1FA2] to-[#673AB7] p-px transition hover:bg-gradient-to-br"

@@ -20,7 +20,7 @@ export default function DockLanguageSwitch({
   } = useLanguage();
 
   return (
-    <DockItem mouseX={mouseX} unmagnetized>
+    <DockItem mouseX={mouseX} unmagnetized aria-label="Switch Language">
       <>
         <LuLanguages />
         <div className="absolute bottom-1/2 flex h-0 w-[200%] items-start justify-center overflow-hidden group-hover:h-auto">
