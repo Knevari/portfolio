@@ -15,7 +15,7 @@ export default function Project({
       href={href}
       target="_blank"
       className={cx(
-        "p ease bg-gray bg-colorful-gradient bg-3x bg-[0%_0%] p-px transition-bg-pos-transform duration-500 hover:bg-[100%_100%]",
+        "ease bg-gray bg-colorful-gradient bg-3x bg-[0%_0%] p-px transition-bg-pos-transform duration-500 hover:bg-[100%_100%]",
         className,
       )}
       {...props}
