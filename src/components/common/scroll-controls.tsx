@@ -72,7 +72,7 @@ export default function ScrollControls({
       <motion.div
         animate={canScrollLeft ? "visible" : "hidden"}
         variants={buttonVariants}
-        className="absolute left-0 top-1/2 hidden origin-center -translate-x-full -translate-y-1/2 rounded-full bg-[#30333A] p-px md:block"
+        className="absolute -left-[25px] top-1/2 hidden origin-center -translate-y-1/2 rounded-full bg-[#30333A] p-px md:block"
         onClick={scrollLeft}
       >
         <button
@@ -86,7 +86,7 @@ export default function ScrollControls({
       <motion.div
         animate={canScrollRight ? "visible" : "hidden"}
         variants={buttonVariants}
-        className="absolute right-0 top-1/2 hidden origin-center -translate-y-1/2 translate-x-[20px] rounded-full bg-[#30333A] p-px md:block"
+        className="absolute -right-[25px] top-1/2 hidden origin-center -translate-y-1/2 rounded-full bg-[#30333A] p-px md:block"
         onClick={scrollRight}
       >
         <button

@@ -51,7 +51,7 @@ export default function Projects() {
   const projectsContainerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="relative flex w-[95vw] flex-col justify-stretch md:max-w-[70%] xl:h-[90vh] xl:max-h-[972px]">
+    <div className="relative flex w-[90vw] flex-col justify-stretch md:max-w-[70%] xl:h-[90vh] xl:max-h-[972px]">
       <h2 className="mb-4 text-left text-5xl font-bold text-white">
         {t("projects")}
       </h2>
@@ -71,9 +71,9 @@ export default function Projects() {
               <img
                 src={project.thumbnail}
                 alt={project.name}
-                className="absolute left-0 top-0 h-full min-h-[250px] w-full object-contain transition delay-100 duration-500"
+                className="left-0 top-0 h-full min-h-[250px] w-full object-contain transition delay-100 duration-500 lg:absolute"
               />
-              <div className="absolute bottom-0 w-full bg-gradient-to-br from-gray to-grayer px-4 py-2">
+              <div className="absolute bottom-0 z-40 w-full bg-gradient-to-br from-gray to-grayer px-4 py-2">
                 <p className="font-semibold text-white">{project.name}</p>
               </div>
             </div>
