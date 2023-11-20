@@ -1,10 +1,52 @@
 {
   "projects": [
     {
+      "name": "N64 Style Pokpédex",
+      "source": "https://codepen.io/_Common/pen/gJVvGL",
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/q_auto:good/v1700439377/portfolio/projects/thumbnails/poke_homzc3.webp",
+      "video": "https://res.cloudinary.com/dvfpvjwre/video/upload/v1700439451/portfolio/projects/videos/poke_qlaris.mov"
+    },
+    {
+      "name": "Riot Client (Study)",
+      "source": "https://codepen.io/_Common/pen/GRPvord",
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/q_auto:good/v1700439377/portfolio/projects/thumbnails/riot-client_ec6o9e.webp",
+      "video": "https://res.cloudinary.com/dvfpvjwre/video/upload/v1700439452/portfolio/projects/videos/riot-client_pmvk7v.mov"
+    },
+    {
       "name": "Overfall",
       "source": "https://github.com/Knevari/overfall",
       "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/f_auto,q_auto:good/v1700400586/portfolio/projects/thumbnails/overfall_buxltr.png",
       "video": "https://res.cloudinary.com/dvfpvjwre/video/upload/v1700400520/portfolio/projects/videos/overfall_vnn4hl.mov"
+    },
+    {
+      "name": "Similar Yu-Gi-Oh! Cards",
+      "source": "https://codepen.io/_Common/full/YombVx",
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/q_auto:good/v1700439379/portfolio/projects/thumbnails/yugi_vjuce1.webp",
+      "video": "https://res.cloudinary.com/dvfpvjwre/video/upload/v1700439478/portfolio/projects/videos/yugi_nqhb5a.mov"
+    },
+    {
+      "name": "Phyllotaxis Visualizer",
+      "source": "https://codepen.io/_Common/full/Exdqpya",
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/q_auto:good/v1700439377/portfolio/projects/thumbnails/phyllotaxis_twufqf.webp",
+      "video": "https://res.cloudinary.com/dvfpvjwre/video/upload/v1700439626/portfolio/projects/videos/phyllotaxis_opjaya.mov"
+    },
+    {
+      "name": "Animation Studies on Milliarta's work",
+      "source": "https://codepen.io/_Common/full/xxmdmMj",
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/q_auto:good/v1700439531/portfolio/projects/thumbnails/anim-studies_gxjbyk.webp",
+      "video": "https://res.cloudinary.com/dvfpvjwre/video/upload/v1700439450/portfolio/projects/videos/anim-studies_r3tt6v.mov"
+    },
+    {
+      "name": "Mobile Payment UI (Study)",
+      "source": "https://codepen.io/_Common/full/bGOaKVj",
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/v1700439377/portfolio/projects/thumbnails/payment-ui_lq5rjn.png",
+      "video": "https://res.cloudinary.com/dvfpvjwre/video/upload/v1700439450/portfolio/projects/videos/payment-ui_ftsrpx.mov"
+    },
+    {
+      "name": "Riot Faction Cards (Study)",
+      "source": "https://codepen.io/_Common/full/orxwEy",
+      "thumbnail": "https://res.cloudinary.com/dvfpvjwre/image/upload/q_auto:good/v1700439378/portfolio/projects/thumbnails/riot-faction-cards_w8xnbm.webp",
+      "video": "https://res.cloudinary.com/dvfpvjwre/video/upload/v1700439453/portfolio/projects/videos/riot-faction-cards_lq4nkr.mov"
     },
     {
       "name": "This Portfolio",
