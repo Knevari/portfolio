@@ -33,7 +33,6 @@ export default function Projects() {
                   width="100%"
                   height="100%"
                   className="absolute h-full w-full object-contain"
-                  autoPlay
                   muted
                   loop
                 >
