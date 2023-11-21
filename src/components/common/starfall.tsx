@@ -108,8 +108,8 @@ export default function Starfall() {
       const starImage = starImageRef.current;
 
       if (starImage) {
-        ctx.save();
-        ctx.globalAlpha = visibility;
+        // ctx.save();
+        // ctx.globalAlpha = visibility;
         ctx.drawImage(
           starImage,
           star.x - star.size * imageStarSizeRatio,
@@ -117,7 +117,7 @@ export default function Starfall() {
           star.size * imageStarSizeRatio * 2,
           star.size * imageStarSizeRatio * 2,
         );
-        ctx.restore();
+        // ctx.restore();
       }
 
       // Cover up trail
