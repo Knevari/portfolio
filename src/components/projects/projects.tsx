@@ -17,7 +17,7 @@ const ProjectVideo = ({ src }: { src: string }) => {
       ref={videoRef}
       width="100%"
       height="100%"
-      className="absolute z-20 h-full w-full object-contain"
+      className="z-20 hidden h-full w-full object-contain group-hover:absolute xl:block"
       preload="none"
       muted
       loop

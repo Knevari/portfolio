@@ -2,12 +2,18 @@ import { motion } from "framer-motion";
 import { cx } from "../../utils";
 
 const variants = {
-  visible: {
+  visible: (delay: number) => ({
     opacity: 1,
-  },
-  hidden: {
+    transition: {
+      delay,
+    },
+  }),
+  hidden: (delay: number) => ({
     opacity: 0,
-  },
+    transition: {
+      delay,
+    },
+  }),
 };
 
 export interface StackTooltipProps
@@ -17,6 +23,13 @@ export interface StackTooltipProps
   isActive?: boolean;
 }
 
+const positions = {
+  top: "bottom-[calc(100%+5px)] left-1/2 -translate-x-1/2",
+  bottom: "top-[calc(100%+10px)] left-1/2 -translate-x-1/2",
+  left: "top-1/2 -translate-y-1/2 right-[calc(100%+10px)]",
+  right: "top-1/2 -translate-y-1/2 left-[calc(100%+10px)]",
+};
+
 export default function StackTooltip({
   delay,
   children,
@@ -24,19 +37,13 @@ export default function StackTooltip({
   className = "",
   isActive = false,
 }: StackTooltipProps) {
-  const positions = {
-    top: "bottom-[calc(100%+5px)] left-1/2 -translate-x-1/2",
-    bottom: "top-[calc(100%+10px)] left-1/2 -translate-x-1/2",
-    left: "top-1/2 -translate-y-1/2 right-[calc(100%+10px)]",
-    right: "top-1/2 -translate-y-1/2 left-[calc(100%+10px)]",
-  };
   return (
     <motion.span
+      custom={delay}
       animate={isActive ? "visible" : "hidden"}
       variants={variants}
-      tabIndex={-1}
-      transition={{ delay }}
       role="tooltip"
+      tabIndex={-1}
       className={cx(
         "border-3 absolute z-50 rounded-full bg-[#0D0D0D] px-8 py-1 text-sm text-pink",
         positions[position],

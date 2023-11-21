@@ -32,15 +32,15 @@ const withIconTooltip = (
   );
 };
 
-export default function MyStack({ inViewport }: { inViewport: boolean }) {
+export default function MyStack() {
   const { t } = useTranslation();
-  const setIsShowingTooltips = useSetAtom(tooltipAtom);
 
+  const setIsShowingTooltips = useSetAtom(tooltipAtom);
   const onMouseEnter = () => setIsShowingTooltips(true);
   const onMouseLeave = () => setIsShowingTooltips(false);
 
   return (
-    <Card isActive={inViewport} className="h-[90vh] max-h-[972px]">
+    <Card className="h-[90vh] max-h-[972px]">
       <Card.Title>{t("myStack")}</Card.Title>
       <Card.Subtitle>
         <br />
