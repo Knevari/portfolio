@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  --background: #101010;
+  --foreground: #ffffff;
+  --accent-cyan: #32C0F0;
+  --accent-green: #32FF5F;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cyan: var(--accent-cyan);
+  --color-green: var(--accent-green);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #101010;
+  --foreground: #ffffff;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}

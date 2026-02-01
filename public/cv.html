@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mateus "Knevari" Souza - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #101010;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+            --accent-cyan: #32C0F0;
+            --accent-green: #32FF5F;
+            --gradient-main: linear-gradient(90deg, #32C0F0, #32FF5F);
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            margin: 0;
+            padding: 40px;
+            /* Reduced padding for print */
+            max-width: 210mm;
+            /* A4 width */
+            margin: 0 auto;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* HEADER */
+        header {
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .title-gradient {
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* LAYOUT */
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            /* Main content vs Sidebar */
+            gap: 40px;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-cyan);
+            border-bottom: 1px solid rgba(50, 192, 240, 0.3);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* EXPERIENCE ITEMS */
+        .job {
+            margin-bottom: 20px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .company.n3mus {
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .role {
+            font-weight: 600;
+            color: var(--accent-green);
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .job p {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 15px;
+            color: #ddd;
+        }
+
+        li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+        }
+
+        /* SKILLS PILLS */
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 5px;
+        }
+
+        .skill-category h3 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+        }
+
+        .pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: 1px solid #333;
+        }
+
+        /* SUMMARY */
+        .summary {
+            font-size: 0.95rem;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+                width: auto;
+            }
+
+            header {
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .sidebar {
+                order: -1;
+                /* Skills first on mobile? Or standard flow? Standard flow usually better for CVs. */
+                order: 0;
+                border-top: 1px solid #333;
+                padding-top: 20px;
+            }
+
+            .job-header {
+                flex-direction: column;
+            }
+
+            .date {
+                margin-top: 2px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* PRINT MEDIA QUERY */
+        @media print {
+            body {
+                background-color: #101010 !important;
+                /* Force dark bg */
+                -webkit-print-color-adjust: exact;
+                width: 210mm;
+                /* Force A4 on print */
+                padding: 30px;
+                /* Reset padding for print */
+            }
+
+            .container {
+                display: grid;
+                /* Maintain grid on print */
+                grid-template-columns: 2fr 1fr;
+            }
+
+            /* Hide URL artifacts if browser adds them */
+            a[href]:after {
+                content: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Mateus "Knevari" Souza</h1>
+        <div class="title-gradient">Senior Software Engineer — React, Node.js & Web3 Systems</div>
+        <div class="contact-info">
+            <span>mateus7319@gmail.com</span>
+            <span>•</span>
+            <span>+55 (81) 9 999292711</span>
+            <span>•</span>
+            <a href="https://github.com/Knevari">GitHub/Knevari</a>
+            <span>•</span>
+            <a href="#">LinkedIn</a>
+            <span>•</span>
+            <span>Brazil (Remote)</span>
+        </div>
+    </header>
+
+    <div class="summary">
+        Product-Oriented Senior Software Engineer with 8+ years of experience architecting high-scale Web3 and FinTech
+        applications. Specialist in 0-to-1 platform growth, having built the core infrastructure for
+        <strong>N3MUS</strong> (26k+ users, 300+ DAU, 4mil+ blockchain transactions) from the ground up. Deep expertise
+        in the TypeScript ecosystem and Blockchain integration. Proven track record of designing complex gamification
+        engines, financial logic, and scalable frontend architectures.
+    </div>
+
+    <div class="container">
+        <!-- LEFT COLUMN (Main Experience) -->
+        <div class="main-column">
+            <section>
+                <h2>Career Experience</h2>
+
+                <!-- N3MUS -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <span class="company n3mus">N3MUS</span> | <span class="role">Lead Full Stack
+                                Engineer</span>
+                        </div>
+                        <span class="date">Jan 2022 - Present</span>
+                    </div>
+                    <p>Architected the core financial and social infrastructure for a Web3 Gaming Hub, scaling from 0 to
+                        26,000+ registered users.</p>
+                    <ul>
+                        <li><strong>Financial Infrastructure:</strong> Designed and built a non-custodial multi-chain
+                            wallet system from scratch. Integrated Thirdweb, WalletConnect, and Squid Router, enabling
+                            seamless cross-chain swaps.</li>
+                        <li><strong>Scalable Backend:</strong> Engineered the Leaderboard Fetcher, a high-throughput
+                            engine normalizing gaming data from APIs and Smart Contracts for real-time rankings.</li>
+                        <li><strong>Complex Game Systems:</strong> Implemented the "Clan Wars" & N3mesis Engine, a
+                            competitive Elo-based rivalry system with dynamic modifiers like "Blitzkrieg" and "Last
+                            Stand."</li>
+                        <li><strong>Growth Engineering:</strong> Built the User Referral System and Activity Tracker,
+                            providing data for retention analysis and the "Daily Quests" engine.</li>
+                    </ul>
+                </div>
+
+                <!-- Blkbirds -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <span class="company">Blkbirds</span> | <span class="role">Lead Frontend Engineer</span>
+                        </div>
+                        <span class="date">Jan 2021 - Dec 2021</span>
+                    </div>
+                    <p>Designed and owned a high-traffic dApp ecosystem, specializing in gamified NFT mechanics.</p>
+                    <ul>
+                        <li><strong>Gamified Distribution:</strong> Engineered the "Mystery Chest" drop mechanic,
+                            recognized by BSC News. Handled complex state for real-time animations and on-chain RNG.
+                        </li>
+                        <li><strong>Web3 Integration:</strong> Implemented foundational wallet connections (Ethers.js)
+                            with robust error handling for transaction lifecycles.</li>
+                        <li><strong>Optimization:</strong> Refactored legacy React components to reduce bundle size and
+                            improve TTI for global users.</li>
+                    </ul>
+                </div>
+
+                <!-- BitX -->
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <span class="company">BitX Software House</span> | <span class="role">Software
+                                Engineer</span>
+                        </div>
+                        <span class="date">Jan 2020 - Dec 2020</span>
+                    </div>
+                    <ul>
+                        <li><strong>Internal Tooling:</strong> Built mission-critical dashboards for monitoring mobile
+                            application fleets, reducing incident response time.</li>
+                        <li><strong>Modernization:</strong> Led the migration to react-native-web, enabling faster
+                            cross-platform testing and reducing QA cycles.</li>
+                        <li><strong>Code Quality:</strong> Refactored legacy class components to React Hooks,
+                            establishing new coding standards for the team.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- RIGHT COLUMN (Skills & Education) -->
+        <div class="sidebar">
+            <section>
+                <h2>Technical Stack</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <div class="pills">
+                            <span class="pill">React.js</span>
+                            <span class="pill">Next.js</span>
+                            <span class="pill">TypeScript</span>
+                            <span class="pill">Tailwind</span>
+                            <span class="pill">Chakra UI</span>
+                            <span class="pill">Storybook</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend & Web3</h3>
+                        <div class="pills">
+                            <span class="pill">Node.js</span>
+                            <span class="pill">NestJS</span>
+                            <span class="pill">Prisma</span>
+                            <span class="pill">Ethers.js</span>
+                            <span class="pill">Web3.js</span>
+                            <span class="pill">Solidity</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>DevOps & DB</h3>
+                        <div class="pills">
+                            <span class="pill">Docker</span>
+                            <span class="pill">Podman</span>
+                            <span class="pill">PostgreSQL</span>
+                            <span class="pill">MongoDB</span>
+                            <span class="pill">Redis</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                <div class="job">
+                    <div class="company" style="font-size: 1rem;">Postgraduate in Software Architecture & Cybersec</div>
+                    <div class="date">PUC (Expected 2026)</div>
+                </div>
+                <div class="job">
+                    <div class="company" style="font-size: 1rem;">Bachelor of Computer Science</div>
+                    <div class="date">UNAMA (2020)</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Languages</h2>
+                <div class="pills">
+                    <span class="pill">English (Fluent)</span>
+                    <span class="pill">Portuguese (Native)</span>
+                    <span class="pill">Japanese (Intermediate)</span>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</body>
+
+</html>
