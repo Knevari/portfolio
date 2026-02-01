@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import SystemStatus from "../hud/SystemStatus";
 import Deployments from "../hud/Deployments";
 import ContactModal from "../hud/ContactModal";
+import Magnetic from "../hud/Magnetic";
 
 export default function Hero() {
     const [isContactOpen, setIsContactOpen] = useState(false);
@@ -58,22 +59,31 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.2 }}
-                    className="mt-12 flex flex-col md:flex-row gap-4"
+                    className="mt-12 flex flex-col md:flex-row gap-6 items-center"
                 >
-                    <a
-                        href="/cv.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-8 py-3 bg-cyan text-[#101010] font-bold uppercase tracking-widest text-sm hover:bg-white transition-all duration-300 rounded-sm text-center"
-                    >
-                        SEE MY RESUME
-                    </a>
-                    <button
-                        onClick={() => setIsContactOpen(true)}
-                        className="px-8 py-3 border border-green text-green font-bold uppercase tracking-widest text-sm hover:bg-green/10 transition-all duration-300 rounded-sm"
-                    >
-                        Initiate Contact
-                    </button>
+                    <Magnetic>
+                        <a
+                            href="/cv.html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative px-10 py-4 bg-cyan text-[#101010] font-black uppercase tracking-[0.2em] text-xs transition-all duration-300 rounded-sm text-center group overflow-hidden block"
+                        >
+                            <span className="relative z-10">SEE MY RESUME</span>
+                            <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                            <div className="absolute -inset-1 bg-cyan/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </a>
+                    </Magnetic>
+
+                    <Magnetic>
+                        <button
+                            onClick={() => setIsContactOpen(true)}
+                            className="relative px-10 py-4 border border-green text-green font-black uppercase tracking-[0.2em] text-xs transition-all duration-300 rounded-sm group overflow-hidden"
+                        >
+                            <span className="relative z-10">Initiate Contact</span>
+                            <div className="absolute inset-0 bg-green/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
+                            <div className="absolute -inset-1 bg-green/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </button>
+                    </Magnetic>
                 </motion.div>
             </div>
 
