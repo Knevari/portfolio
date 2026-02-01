@@ -2,15 +2,16 @@ import Hero from "@/components/hero/Hero";
 import Galaxy from "@/components/canvas/Galaxy";
 import Starfall from "@/components/canvas/Starfall";
 import CRTOverlay from "@/components/hud/CRTOverlay";
+import MissionArchives from "@/components/sections/MissionArchives";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative bg-[#101010]">
       <Starfall />
       <Galaxy />
       <Hero />
+      <MissionArchives />
       <CRTOverlay />
-      {/* Additional sections like Projects can be added here later */}
     </main>
   );
 }
