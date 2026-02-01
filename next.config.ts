@@ -5,10 +5,8 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
-  experimental: {
-    turbopack: {
-      root: "/home/knevari/Desktop/Projects/portfolio",
-    },
+  turbopack: {
+    root: "/home/knevari/Desktop/Projects/portfolio",
   },
 };
 
