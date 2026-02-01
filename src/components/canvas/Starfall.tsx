@@ -43,8 +43,8 @@ export default function Starfall() {
         const ctx = ctxRef.current;
         if (!ctx || !canvas) return;
 
-        // Subtle fade trail
-        ctx.fillStyle = "rgba(16, 16, 16, 0.15)";
+        // Subtle fade trail - higher alpha clears faster
+        ctx.fillStyle = "rgba(16, 16, 16, 0.4)";
         ctx.fillRect(0, 0, canvas.width / (window.devicePixelRatio || 1), canvas.height / (window.devicePixelRatio || 1));
 
         for (let i = 0; i < count; i++) {
