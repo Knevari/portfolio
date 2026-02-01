@@ -10,8 +10,8 @@ export default function Magnetic({ children }: { children: React.ReactNode }) {
     const handleMouse = (e: React.MouseEvent) => {
         const { clientX, clientY } = e;
         const { height, width, left, top } = ref.current!.getBoundingClientRect();
-        const middleX = clientX - (left + width / 2);
-        const middleY = clientY - (top + height / 2);
+        const middleX = (clientX - (left + width / 2)) * 0.35;
+        const middleY = (clientY - (top + height / 2)) * 0.35;
         setPosition({ x: middleX, y: middleY });
     };
 
