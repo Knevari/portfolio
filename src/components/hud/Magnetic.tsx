@@ -2,16 +2,23 @@
 
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import useAudio from "@/hooks/useAudio";
 
 export default function Magnetic({ children }: { children: React.ReactNode }) {
     const ref = useRef<HTMLDivElement>(null);
     const [position, setPosition] = useState({ x: 0, y: 0 });
+    const { playBlip } = useAudio();
 
     const handleMouse = (e: React.MouseEvent) => {
         const { clientX, clientY } = e;
         const { height, width, left, top } = ref.current!.getBoundingClientRect();
         const middleX = (clientX - (left + width / 2)) * 0.35;
         const middleY = (clientY - (top + height / 2)) * 0.35;
+
+        if (position.x === 0 && position.y === 0) {
+            playBlip();
+        }
+
         setPosition({ x: middleX, y: middleY });
     };
 

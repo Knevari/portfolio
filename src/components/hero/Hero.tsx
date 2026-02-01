@@ -50,7 +50,7 @@ export default function Hero() {
                         KNEVARI
                     </h1>
                     <p className="text-xl md:text-2xl font-bold text-white tracking-tight max-w-2xl mx-auto uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                        Senior Product Architect <span className="text-cyan mx-2">|</span>
+                        Senior Product Architect <span className="text-green mx-2">|</span>
                         <span className="text-green"> Web3 & FinTech</span>
                     </p>
                 </motion.div>

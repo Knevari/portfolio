@@ -1,7 +1,9 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, MessageSquare, Send, Disc, Mail, ExternalLink } from "lucide-react";
+import useAudio from "@/hooks/useAudio";
 
 interface ContactModalProps {
     isOpen: boolean;
@@ -16,17 +18,30 @@ const CONTACTS = [
 ];
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
+    const { playStatic } = useAudio();
+
+    useEffect(() => {
+        if (isOpen) {
+            playStatic();
+        }
+    }, [isOpen, playStatic]);
+
+    const handleClose = () => {
+        playStatic();
+        onClose();
+    };
+
     return (
         <AnimatePresence>
             {isOpen && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-[#101010]/80 backdrop-blur-sm">
-                    {/* Backdrop interaction to close */}
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+                    {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        onClick={onClose}
-                        className="absolute inset-0 cursor-crosshair"
+                        onClick={handleClose}
+                        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
                     />
 
                     <motion.div
