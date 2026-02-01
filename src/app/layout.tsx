@@ -13,14 +13,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Knevari | Senior Product Architect",
-  description: "Architecting the Event Horizon of Web3 & FinTech. Founding Partner at N3MUS, Technical Architect for BitX and BlkBirds.",
-  keywords: ["Web3", "Product Architect", "FinTech", "N3MUS", "Knevari", "Blockchain Architecture", "Next.js", "Three.js"],
-  authors: [{ name: "Knevari" }],
+  title: 'Mateus "Knevari" Souza | Senior Product Architect',
+  description: "Architecting the technical horizon of Web3 & FinTech. Founding Partner at N3MUS. Specialist in high-scale systems and decentralized architecture.",
+  keywords: ["Web3", "Product Architect", "FinTech", "N3MUS", "Knevari", "Blockchain", "Next.js", "System Design"],
+  authors: [{ name: "Mateus Souza" }],
   openGraph: {
-    title: "Knevari | Senior Product Architect",
-    description: "Building the future of decentralized finance and gaming architecture.",
+    title: 'Mateus "Knevari" Souza | Senior Product Architect',
+    description: "Senior Technical Architect specialized in Web3 platforms and FinTech systems architecture.",
+    url: "https://knevari.me",
+    siteName: "Knevari Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Knevari // Senior Product Architect",
+      },
+    ],
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: 'Mateus "Knevari" Souza | Senior Product Architect',
+    description: "Architecting high-scale Web3 & FinTech systems.",
+    images: ["/og-image.png"],
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 

@@ -6,12 +6,16 @@ import SystemStatus from "../hud/SystemStatus";
 import Deployments from "../hud/Deployments";
 import ContactModal from "../hud/ContactModal";
 import Magnetic from "../hud/Magnetic";
+import Galaxy from "../canvas/Galaxy";
+import Starfall from "../canvas/Starfall";
 
 export default function Hero() {
     const [isContactOpen, setIsContactOpen] = useState(false);
 
     return (
         <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden p-6 md:p-12">
+            <Starfall />
+            <Galaxy />
             {/* Top Left HUD */}
             <motion.div
                 initial={{ opacity: 0, x: -20 }}

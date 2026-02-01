@@ -122,7 +122,7 @@ export default function Starfall() {
     return (
         <canvas
             ref={canvasRef}
-            className="fixed inset-0 -z-20 pointer-events-none opacity-40"
+            className="absolute inset-0 -z-20 pointer-events-none opacity-40"
         />
     );
 }
