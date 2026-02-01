@@ -38,8 +38,8 @@ export default function Hero() {
             <div className="absolute bottom-0 left-0 w-32 h-32 border-b border-l border-green/20 rounded-bl-3xl pointer-events-none" />
             <div className="absolute bottom-0 right-0 w-32 h-32 border-b border-r border-green/20 rounded-br-3xl pointer-events-none" />
 
-            {/* Main Content */}
-            <div className="z-10 flex flex-col items-center text-center">
+            {/* Main Content - Elevation for clarity */}
+            <div className="z-[10001] flex flex-col items-center text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

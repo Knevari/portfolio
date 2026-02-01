@@ -6,10 +6,10 @@ import CRTOverlay from "@/components/hud/CRTOverlay";
 export default function Home() {
   return (
     <main className="relative min-h-screen">
-      <CRTOverlay />
       <Starfall />
       <Galaxy />
       <Hero />
+      <CRTOverlay />
       {/* Additional sections like Projects can be added here later */}
     </main>
   );

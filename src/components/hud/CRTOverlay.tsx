@@ -4,9 +4,9 @@ import React from "react";
 
 export default function CRTOverlay() {
     return (
-        <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
+        <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden" style={{ pointerEvents: 'none' }}>
             {/* Static Noise Texture - Extra Subdued */}
-            <div className="absolute inset-0 opacity-[0.008] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-100" />
+            <div className="absolute inset-0 opacity-[0.008] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-100" style={{ pointerEvents: 'none' }} />
 
             {/* Scanlines layer - Neutral and nearly imperceptible */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0)_50%,rgba(255,255,255,0.015)_50%)] bg-[length:100%_4px] animate-scanline pointer-events-none" />
