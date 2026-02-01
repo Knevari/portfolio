@@ -3,18 +3,24 @@
 import { Box, Code2, Globe } from "lucide-react";
 import clsx from "clsx";
 
-const DEPLOYMENTS = [
-    { name: "N3MUS", role: "Founding Partner / Architect", status: "Active", url: "n3mus.com", color: "text-green" },
-    { name: "BLK BIRDS", role: "Software Engineer", status: "Deprecated", url: "blkbirds.com", color: "text-red-500" },
-    { name: "BIT X", role: "Software Engineer", status: "Deprecated", url: "bitx.fi", color: "text-red-500" },
-];
+import { useTranslations } from "next-intl";
 
 export default function Deployments() {
+    const t = useTranslations("Deployments");
+    const tm = useTranslations("Missions");
+    const tp = useTranslations("Projects");
+
+    const DEPLOYMENTS = [
+        { name: "N3MUS", role: tp("n3mus.role"), status: "Active", url: "n3mus.com", color: "text-green" },
+        { name: "BLK BIRDS", role: tp("blkbirds.role"), status: "Deprecated", url: "blkbirds.com", color: "text-red-500" },
+        { name: "BIT X", role: tp("bitx.role"), status: "Deprecated", url: "bitx.fi", color: "text-red-500" },
+    ];
+
     return (
         <div className="flex flex-col gap-3 font-mono text-[10px] uppercase tracking-wider text-green/80">
             <div className="flex items-center gap-2">
                 <Box size={14} className="text-green" />
-                <span className="font-bold text-green">Active Deployments</span>
+                <span className="font-bold text-green">{t("title")}</span>
             </div>
             <div className="grid gap-2 pr-6 border-r border-green/20 text-right">
                 {DEPLOYMENTS.map((dep) => (

@@ -1,10 +1,15 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
+  reactCompiler: true,
   experimental: {
-    // @ts-ignore - reactCompiler is a valid experimental feature
-    reactCompiler: true,
+    turbopack: {
+      root: "/home/knevari/Desktop/Projects/portfolio",
+    },
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

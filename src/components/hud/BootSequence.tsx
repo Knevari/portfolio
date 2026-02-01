@@ -4,30 +4,42 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useAudio from "@/hooks/useAudio";
 
-const BOOT_LOGS = [
-    { text: "INITIALIZING CORE PROTOCOLS...", delay: 200 },
-    { text: "LOADING STAR MAPS...", delay: 600 },
-    { text: "SYNCING GALAXY COORDINATES... [OK]", delay: 1000 },
-    { text: "VERIFYING ENCRYPTION KEYS...", delay: 1400 },
-    { text: "ESTABLISHING SECURE CONNECTION... [OK]", delay: 1800 },
-    { text: "ARCHITECT AUTHENTICATED: KNEVARI", delay: 2200 },
-];
+import { useTranslations } from "next-intl";
 
 export default function BootSequence({ onComplete }: { onComplete: () => void }) {
+    const t = useTranslations("Boot");
     const [logs, setLogs] = useState<string[]>([]);
     const { playBlip } = useAudio();
 
+    const BOOT_LOGS = [
+        { text: t("initializing"), delay: 200 },
+        { text: t("loading"), delay: 600 },
+        { text: t("syncing"), delay: 1000 },
+        { text: t("verifying"), delay: 1400 },
+        { text: t("establishing"), delay: 1800 },
+        { text: t("authenticated"), delay: 2200 },
+    ];
+
     useEffect(() => {
+        const timeouts: NodeJS.Timeout[] = [];
+
         BOOT_LOGS.forEach((log, index) => {
-            setTimeout(() => {
-                setLogs((prev) => [...prev, log.text]);
+            const timeoutId = setTimeout(() => {
+                setLogs((prev) => {
+                    if (prev.includes(log.text)) return prev;
+                    return [...prev, log.text];
+                });
                 playBlip();
 
                 if (index === BOOT_LOGS.length - 1) {
-                    setTimeout(onComplete, 800);
+                    const finalTimeoutId = setTimeout(onComplete, 800);
+                    timeouts.push(finalTimeoutId);
                 }
             }, log.delay);
+            timeouts.push(timeoutId);
         });
+
+        return () => timeouts.forEach(clearTimeout);
     }, [onComplete, playBlip]);
 
     return (

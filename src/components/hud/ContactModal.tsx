@@ -17,8 +17,11 @@ const CONTACTS = [
     { name: "Email", value: "mateus7319@gmail.com", link: "mailto:mateus7319@gmail.com", icon: Mail, color: "text-white" },
 ];
 
+import { useTranslations } from "next-intl";
+
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     const { playStatic } = useAudio();
+    const t = useTranslations("Contact");
 
     useEffect(() => {
         if (isOpen) {
@@ -57,7 +60,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                         <div className="flex items-center justify-between p-4 border-b border-cyan/20 bg-[#1a1a1a]">
                             <div className="flex items-center gap-2">
                                 <div className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-                                <h2 className="font-mono text-xs font-bold tracking-[0.2em] text-cyan uppercase">Communication Channel // Secure</h2>
+                                <h2 className="font-mono text-xs font-bold tracking-[0.2em] text-cyan uppercase">{t("title")}</h2>
                             </div>
                             <button
                                 onClick={onClose}
@@ -69,7 +72,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
                         {/* Content */}
                         <div className="p-6 grid gap-4">
-                            <p className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-2">Select protocol to initiate contact:</p>
+                            <p className="font-mono text-[10px] text-white/50 uppercase tracking-widest mb-2">{t("subtitle")}</p>
 
                             <div className="grid gap-3">
                                 {CONTACTS.map((contact) => (
@@ -101,10 +104,10 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                         {/* Footer / Status */}
                         <div className="p-3 bg-[#1a1a1a] border-t border-cyan/10 flex items-center justify-between font-mono text-[8px] uppercase tracking-widest text-white/30">
                             <div className="flex gap-4">
-                                <span>Signal: Strong</span>
-                                <span>Latency: 12ms</span>
+                                <span>{t("signal")}: {t("signal_strong")}</span>
+                                <span>{t("latency")}: 12ms</span>
                             </div>
-                            <span className="text-cyan opacity-60">Status: Connection Waiting</span>
+                            <span className="text-cyan opacity-60">{t("status")}: {t("waiting")}</span>
                         </div>
 
                         {/* Decorative Corner */}

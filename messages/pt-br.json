@@ -1,0 +1,82 @@
+{
+    "Metadata": {
+        "title": "Mateus \"Knevari\" Souza | Arquiteto Sênior de Produtos",
+        "description": "Arquitetando o horizonte técnico de Web3 & FinTech. Sócio Fundador na N3MUS. Especialista em sistemas de alta escala e arquitetura descentralizada."
+    },
+    "Hero": {
+        "protocol": "Event Horizon // Protocolo",
+        "resume": "VER MEU CURRÍCULO",
+        "contact": "Iniciar Contato"
+    },
+    "Missions": {
+        "title": "Arquivos Táticos",
+        "subtitle_1": "Logs de",
+        "subtitle_2": "Missão",
+        "description": "Acessando dados de missão criptografados...",
+        "sub_description": "Recuperando esquemas arquitetônicos para implantações primárias.",
+        "status": "STATUS",
+        "deployment_id": "ID_IMPLANTAÇÃO",
+        "mission_results": "RESULTADOS_MISSÃO.LOG"
+    },
+    "Boot": {
+        "initializing": "INICIALIZANDO PROTOCOLOS CENTRAIS...",
+        "loading": "CARREGANDO MAPAS ESTELARES...",
+        "syncing": "SINCRONIZANDO COORDENADAS GALÁCTICAS... [OK]",
+        "verifying": "VERIFICANDO CHAVES DE CRIPTOGRAFIA...",
+        "establishing": "ESTABELECENDO CONEXÃO SEGURA... [OK]",
+        "authenticated": "ARQUITETO AUTENTICADO: KNEVARI"
+    },
+    "Status": {
+        "title": "Status do Sistema: Online",
+        "audio_online": "Áudio Online",
+        "audio_muted": "Áudio Mudo",
+        "uptime": "Tempo de Atividade",
+        "environment": "Ambiente",
+        "production": "Produção",
+        "core": "Núcleo"
+    },
+    "Deployments": {
+        "title": "Implantações Ativas"
+    },
+    "Contact": {
+        "title": "Canal de Comunicação // Seguro",
+        "subtitle": "Selecione o protocolo para iniciar contato:",
+        "signal": "Sinal",
+        "signal_strong": "Forte",
+        "latency": "Latência",
+        "status": "Status",
+        "waiting": "Aguardando Conexão"
+    },
+    "Projects": {
+        "n3mus": {
+            "role": "SÓCIO FUNDADOR & ARQUITETO",
+            "brief": "Arquitetou a infraestrutura financeira e social principal de um Hub de Jogos Web3, escalando de 0 a 26.000+ usuários registrados e 4M+ de transações.",
+            "impact": [
+                "Construiu sistema de carteira multi-chain não custodial do zero via Thirdweb & Squid Router",
+                "Projetou sistema de Leaderboard de alto rendimento normalizando dados da blockchain em tempo real",
+                "Desenvolveu o N3mesis Engine: um sistema competitivo baseado em Elo com modificadores dinâmicos",
+                "Implementou motores de rastreamento de atividade e indicação compatíveis com ISO para 26k+ usuários"
+            ]
+        },
+        "blkbirds": {
+            "role": "Engenheiro Frontend Líder",
+            "brief": "Projetou e gerenciou um ecossistema de dApps de alto tráfego especializado em mecânicas de NFT gamificadas e interações on-chain em tempo real.",
+            "impact": [
+                "Projetou mecânica de drop 'Mystery Chest' reconhecida pela BSC News por sua lógica de RNG on-chain",
+                "Implementou arquitetura fundamental de carteira Ethers.js com feedback de usuário robusto",
+                "Otimizou componentes legados reduzindo o tamanho do bundle e melhorando o TTI para usuários globais",
+                "Liderou a estratégia e execução de frontend para múltiplos projetos de staking e marketplaces secundários de sucesso"
+            ]
+        },
+        "bitx": {
+            "role": "Engenheiro de Software",
+            "brief": "Desenvolveu ferramentas internas e modernizou painéis de monitoramento fintech de missão crítica.",
+            "impact": [
+                "Construiu painéis resilientes para monitorar transações de frotas móveis em tempo real",
+                "Liderou a migração para react-native-web permitindo implantação multiplataforma rápida",
+                "Refatorou componentes de classe legados para a arquitetura moderna de React Hooks",
+                "Estabeleceu novos padrões de equipe para qualidade de código e resposta a incidentes"
+            ]
+        }
+    }
+}

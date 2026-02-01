@@ -9,8 +9,12 @@ import Magnetic from "../hud/Magnetic";
 import Galaxy from "../canvas/Galaxy";
 import Starfall from "../canvas/Starfall";
 
+import LanguageSwitcher from "../hud/LanguageSwitcher";
+import { useTranslations } from "next-intl";
+
 export default function Hero() {
     const [isContactOpen, setIsContactOpen] = useState(false);
+    const t = useTranslations("Hero");
 
     return (
         <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden p-6 md:p-12">
@@ -24,6 +28,16 @@ export default function Hero() {
                 className="absolute top-8 left-8 hidden md:block"
             >
                 <SystemStatus />
+            </motion.div>
+
+            {/* Top Right HUD - Language Switcher */}
+            <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.6 }}
+                className="absolute top-8 right-8 z-[10002]"
+            >
+                <LanguageSwitcher />
             </motion.div>
 
             {/* Bottom Right HUD */}
@@ -49,7 +63,7 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <span className="font-mono text-cyan text-sm tracking-[0.3em] uppercase mb-4 block">Event Horizon // Protocol</span>
+                    <span className="font-mono text-cyan text-sm tracking-[0.3em] uppercase mb-4 block">{t("protocol")}</span>
                     <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-white mb-2 filter drop-shadow-[0_0_15px_rgba(50,192,240,0.3)]">
                         KNEVARI
                     </h1>
@@ -72,7 +86,7 @@ export default function Hero() {
                             rel="noopener noreferrer"
                             className="relative px-10 py-4 bg-cyan text-[#101010] font-black uppercase tracking-[0.2em] text-xs transition-all duration-300 rounded-sm text-center group overflow-hidden block"
                         >
-                            <span className="relative z-10">SEE MY RESUME</span>
+                            <span className="relative z-10">{t("resume")}</span>
                             <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                             <div className="absolute -inset-1 bg-cyan/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                         </a>
@@ -83,7 +97,7 @@ export default function Hero() {
                             onClick={() => setIsContactOpen(true)}
                             className="relative px-10 py-4 border border-green text-green font-black uppercase tracking-[0.2em] text-xs transition-all duration-300 rounded-sm group overflow-hidden"
                         >
-                            <span className="relative z-10">Initiate Contact</span>
+                            <span className="relative z-10">{t("contact")}</span>
                             <div className="absolute inset-0 bg-green/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
                             <div className="absolute -inset-1 bg-green/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                         </button>

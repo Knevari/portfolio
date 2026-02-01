@@ -5,52 +5,42 @@ import { motion } from "framer-motion";
 import { Shield } from "lucide-react";
 import ProjectCard from "./ProjectCard";
 
-const missions = [
-    {
-        id: "n3mus",
-        title: "N3MUS // GAMING HUB",
-        role: "FOUNDING PARTNER & ARCHITECT",
-        brief: "Architected the core financial and social infrastructure for a Web3 Gaming Hub, scaling from 0 to 26,000+ registered users and 4M+ transactions.",
-        impact: [
-            "Built non-custodial multi-chain wallet system from scratch via Thirdweb & Squid Router",
-            "Engineered high-throughput Leaderboard engine normalizing real-time blockchain data",
-            "Designed N3mesis Engine: a competitive Elo-based rivalry system with dynamic modifiers",
-            "Implemented ISO-compliant Activity Tracker & Referral engines for 26k+ users"
-        ],
-        stack: ["Next.js", "NestJS", "Prisma", "Ethers.js", "Redis", "PostgreSQL", "Thirdweb", "Azure", "Tailwind", "Framer Motion"],
-        status: "ACTIVE PROTOCOL"
-    },
-    {
-        id: "blkbirds",
-        title: "BLKBIRDS // NFT ECOSYSTEM",
-        role: "Lead Frontend Engineer",
-        brief: "Designed and owned a high-traffic dApp ecosystem specializing in gamified NFT mechanics and real-time on-chain interactions.",
-        impact: [
-            "Engineered 'Mystery Chest' drop mechanic recognized by BSC News for its on-chain RNG logic",
-            "Implemeted foundational Ethers.js wallet architecture with robust user feedback",
-            "Optimized legacy components reducing bundle size and improving TTI for global users",
-            "Led frontend strategy and execution for multiple successful staking projects and secondary marketplaces"
-        ],
-        stack: ["React", "Ethers.js", "Solidity", "Node.js", "Framer Motion", "Tailwind"],
-        status: "DEPRECATED // ARCHIVED"
-    },
-    {
-        id: "bitx",
-        title: "BITX // SOFTWARE FACTORY",
-        role: "Software Engineer",
-        brief: "Engineered internal tooling and modernized mission-critical fintech monitoring dashboards.",
-        impact: [
-            "Built resilient dashboards for monitoring mobile fleet transactions in real-time",
-            "Led the migration to react-native-web enabling rapid cross-platform deployment",
-            "Refactored legacy class components to modern React Hooks architecture",
-            "Established new team standards for code quality and incident response"
-        ],
-        stack: ["React", "React Native Web", "Node.js", "TypeScript", "Redux", "Jest"],
-        status: "DEPRECATED // LEGACY"
-    }
-];
+import { useTranslations } from "next-intl";
 
 export default function MissionArchives() {
+    const t = useTranslations("Missions");
+    const tp = useTranslations("Projects");
+
+    const missions = [
+        {
+            id: "n3mus",
+            title: "N3MUS // GAMING HUB",
+            role: tp("n3mus.role"),
+            brief: tp("n3mus.brief"),
+            impact: tp.raw("n3mus.impact") as string[],
+            stack: ["Next.js", "NestJS", "Prisma", "Ethers.js", "Redis", "PostgreSQL", "Thirdweb", "Azure", "Tailwind", "Framer Motion"],
+            status: "ACTIVE PROTOCOL"
+        },
+        {
+            id: "blkbirds",
+            title: "BLKBIRDS // NFT ECOSYSTEM",
+            role: tp("blkbirds.role"),
+            brief: tp("blkbirds.brief"),
+            impact: tp.raw("blkbirds.impact") as string[],
+            stack: ["React", "Ethers.js", "Solidity", "Node.js", "Framer Motion", "Tailwind"],
+            status: "DEPRECATED // ARCHIVED"
+        },
+        {
+            id: "bitx",
+            title: "BITX // SOFTWARE FACTORY",
+            role: tp("bitx.role"),
+            brief: tp("bitx.brief"),
+            impact: tp.raw("bitx.impact") as string[],
+            stack: ["React", "React Native Web", "Node.js", "TypeScript", "Redux", "Jest"],
+            status: "DEPRECATED // LEGACY"
+        }
+    ];
+
     return (
         <section className="relative w-full py-32 px-6 md:px-12 bg-transparent overflow-hidden">
             <div className="max-w-7xl mx-auto">
@@ -62,14 +52,14 @@ export default function MissionArchives() {
                 >
                     <div className="flex items-center gap-4">
                         <div className="h-px w-12 bg-cyan/50" />
-                        <span className="font-mono text-cyan text-xs tracking-[0.4em] uppercase">Tactical Archives</span>
+                        <span className="font-mono text-cyan text-xs tracking-[0.4em] uppercase">{t("title")}</span>
                     </div>
                     <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase">
-                        Mission <span className="text-green">Logs</span>
+                        {t("subtitle_1")} <span className="text-green">{t("subtitle_2")}</span>
                     </h2>
                     <p className="text-white/40 font-mono text-xs max-w-md mt-4 leading-relaxed">
-                        Accessing encrypted mission data... <br />
-                        Retrieving architectural schematics for primary deployments.
+                        {t("description")} <br />
+                        {t("sub_description")}
                     </p>
                 </motion.div>
 

@@ -1,0 +1,82 @@
+{
+    "Metadata": {
+        "title": "Mateus \"Knevari\" Souza | Senior Product Architect",
+        "description": "Architecting the technical horizon of Web3 & FinTech. Founding Partner at N3MUS. Specialist in high-scale systems and decentralized architecture."
+    },
+    "Hero": {
+        "protocol": "Event Horizon // Protocol",
+        "resume": "SEE MY RESUME",
+        "contact": "Initiate Contact"
+    },
+    "Missions": {
+        "title": "Tactical Archives",
+        "subtitle_1": "Mission",
+        "subtitle_2": "Logs",
+        "description": "Accessing encrypted mission data...",
+        "sub_description": "Retrieving architectural schematics for primary deployments.",
+        "status": "STATUS",
+        "deployment_id": "DEPLOYMENT_ID",
+        "mission_results": "MISSION_RESULTS.LOG"
+    },
+    "Boot": {
+        "initializing": "INITIALIZING CORE PROTOCOLS...",
+        "loading": "LOADING STAR MAPS...",
+        "syncing": "SYNCING GALAXY COORDINATES... [OK]",
+        "verifying": "VERIFYING ENCRYPTION KEYS...",
+        "establishing": "ESTABLISHING SECURE CONNECTION... [OK]",
+        "authenticated": "ARCHITECT AUTHENTICATED: KNEVARI"
+    },
+    "Status": {
+        "title": "System Status: Online",
+        "audio_online": "Audio Online",
+        "audio_muted": "Audio Muted",
+        "uptime": "Uptime",
+        "environment": "Environment",
+        "production": "Production",
+        "core": "Core"
+    },
+    "Deployments": {
+        "title": "Active Deployments"
+    },
+    "Contact": {
+        "title": "Communication Channel // Secure",
+        "subtitle": "Select protocol to initiate contact:",
+        "signal": "Signal",
+        "signal_strong": "Strong",
+        "latency": "Latency",
+        "status": "Status",
+        "waiting": "Connection Waiting"
+    },
+    "Projects": {
+        "n3mus": {
+            "role": "FOUNDING PARTNER & ARCHITECT",
+            "brief": "Architected the core financial and social infrastructure for a Web3 Gaming Hub, scaling from 0 to 26,000+ registered users and 4M+ transactions.",
+            "impact": [
+                "Built non-custodial multi-chain wallet system from scratch via Thirdweb & Squid Router",
+                "Engineered high-throughput Leaderboard engine normalizing real-time blockchain data",
+                "Designed N3mesis Engine: a competitive Elo-based rivalry system with dynamic modifiers",
+                "Implemented ISO-compliant Activity Tracker & Referral engines for 26k+ users"
+            ]
+        },
+        "blkbirds": {
+            "role": "Lead Frontend Engineer",
+            "brief": "Designed and owned a high-traffic dApp ecosystem specializing in gamified NFT mechanics and real-time on-chain interactions.",
+            "impact": [
+                "Engineered 'Mystery Chest' drop mechanic recognized by BSC News for its on-chain RNG logic",
+                "Implemeted foundational Ethers.js wallet architecture with robust user feedback",
+                "Optimized legacy components reducing bundle size and improving TTI for global users",
+                "Led frontend strategy and execution for multiple successful staking projects and secondary marketplaces"
+            ]
+        },
+        "bitx": {
+            "role": "Software Engineer",
+            "brief": "Engineered internal tooling and modernized mission-critical fintech monitoring dashboards.",
+            "impact": [
+                "Built resilient dashboards for monitoring mobile fleet transactions in real-time",
+                "Led the migration to react-native-web enabling rapid cross-platform deployment",
+                "Refactored legacy class components to modern React Hooks architecture",
+                "Established new team standards for code quality and incident response"
+            ]
+        }
+    }
+}

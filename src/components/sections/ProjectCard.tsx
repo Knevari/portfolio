@@ -15,7 +15,10 @@ interface Mission {
     status: string;
 }
 
+import { useTranslations } from "next-intl";
+
 export default function ProjectCard({ mission, index }: { mission: Mission; index: number }) {
+    const t = useTranslations("Missions");
     return (
         <motion.div
             initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
@@ -27,9 +30,9 @@ export default function ProjectCard({ mission, index }: { mission: Mission; inde
             <div className="flex items-center justify-between font-mono text-[10px] tracking-widest uppercase">
                 <div className="flex items-center gap-2 text-white/40">
                     <div className={`h-1.5 w-1.5 rounded-full ${mission.status.includes('ACTIVE') ? 'bg-green animate-pulse' : 'bg-red-500/50'}`} />
-                    <span>STATUS: {mission.status}</span>
+                    <span>{t("status")}: {mission.status}</span>
                 </div>
-                <span className="text-cyan/60">DEPLOYMENT_ID: {mission.id.toUpperCase()}</span>
+                <span className="text-cyan/60">{t("deployment_id")}: {mission.id.toUpperCase()}</span>
             </div>
 
             {/* Header */}
@@ -51,7 +54,7 @@ export default function ProjectCard({ mission, index }: { mission: Mission; inde
             <div className="bg-black/20 p-4 border-l-2 border-cyan/40 flex flex-col gap-3">
                 <div className="flex items-center gap-2 text-[10px] font-mono text-cyan/80">
                     <Terminal size={12} />
-                    <span>MISSION_RESULTS.LOG</span>
+                    <span>{t("mission_results")}</span>
                 </div>
                 <ul className="flex flex-col gap-2">
                     {mission.impact.map((point, i) => (
